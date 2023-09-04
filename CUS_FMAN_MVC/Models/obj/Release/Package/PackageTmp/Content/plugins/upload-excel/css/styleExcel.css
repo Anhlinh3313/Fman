@@ -1,0 +1,147 @@
+﻿body {
+}
+
+#sampleContainer ol {
+    padding: 0px 0px 0px 15px;
+    margin: 0;
+}
+
+#sampleContainer input {
+    margin: 10px 0;
+}
+
+#result {
+    display: none;
+    color: red;
+}
+/*CSS TABLE*/
+table.data-excel {
+    table-layout: auto !important;
+}
+
+    table.data-excel > tbody > tr > td {
+        border-right: 1px solid #d2d2d2;
+    }
+
+        table.data-excel > tbody > tr > td.not_get {
+            text-align: center;
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        table.data-excel > tbody > tr > td.error {
+            color: red !important;
+            background: #ffdddd !important;
+        }
+
+        table.data-excel > tbody > tr > td.not_get {
+            text-align: center;
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        table.data-excel > tbody > tr > td:last-child {
+            border-right: none;
+        }
+
+        table.data-excel > tbody > tr:focus > td, table.data-excel > tbody > tr > td:focus, table.data-excel > tbody > tr > td.active-edit {
+            background: rgb(191, 243, 255);
+        }
+
+    table.data-excel .message_systems {
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        background-image: url(images/ms-success.png);
+    }
+
+    table.data-excel tr:first-child td:last-child .message_systems {
+        display: none;
+    }
+
+    table.data-excel > tbody > tr.ms-error > td > .message_systems {
+        background-image: url(images/ms-error.png) !important;
+    }
+/*CSS EDIT TABLE*/
+.form-edit-cell {
+    position: absolute;
+    z-index: 101;
+    width: 320px;
+    background: #ccc;
+    padding: 7px 10px;
+    border-radius: 10px;
+    box-shadow: 2px -1px 5px rgba(0, 0, 0, 0.75);
+    display: none;
+}
+
+.edit-triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 45px solid #cccccc;
+    position: absolute;
+    display: none;
+    z-index: 100;
+}
+
+.form-edit-cell input.edit-text {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    color: #3e70c3;
+    line-height: 24px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #888888;
+    text-indent: 5px;
+}
+
+.form-edit-cell input[type=button] {
+    display: inline-block;
+    padding: 3px 7px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin: 5px 0px 0px 5px;
+    float: right;
+    z-index: 101;
+}
+
+    .form-edit-cell input[type=button].edit-save {
+        border: 1px solid #0094ff;
+        background: #FFF;
+        color: #0094ff;
+    }
+
+        .form-edit-cell input[type=button].edit-save:hover, .form-edit-cell input[type=button].edit-save:active, .form-edit-cell input[type=button].edit-save:focus {
+            border: 1px solid #0094ff;
+            background: #0094ff;
+            color: #FFF;
+        }
+
+    .form-edit-cell input[type=button].edit-cancel {
+        border: 1px solid #ff0000;
+        background: #FFF;
+        color: #ff0000;
+    }
+
+        .form-edit-cell input[type=button].edit-cancel:hover, .form-edit-cell input[type=button].edit-cancel:active, .form-edit-cell input[type=button].edit-cancel:focus {
+            border: 1px solid #ff0000;
+            background: #ff0000;
+            color: #FFF;
+        }

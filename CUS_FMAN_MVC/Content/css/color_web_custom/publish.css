@@ -1,0 +1,68 @@
+.main-header .sidebar-toggle {
+    background-color: #636465 !important;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #555658 !important;
+}
+
+.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a {
+    background: #555658;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #ffffff !important;
+}
+
+.main-header .logo .logo-mini {
+    padding: 7px 15px;
+}
+
+.form-horizontal .form-body input[type="button"]:hover {
+    background-color: #443026 !important;
+    border-color: #443026 !important;
+}
+
+.form-horizontal .form-body input[type="button"] {
+    background-color: #dca025;
+    border-color: #dca025;
+}
+
+    .form-horizontal .form-body input[type="button"].focus, .form-horizontal .form-body input[type="button"]:focus {
+        background-color: #443026 !important;
+        border-color: #443026 !important;
+    }
+
+.content-wrapper button[type="submit"] {
+    background-color: #dca025 !important;
+    border-color: #dca025 !important;
+}
+
+    .content-wrapper button[type="submit"]:hover, .content-wrapper button[type="submit"]:active, .content-wrapper button[type="submit"]:hover {
+        background-color: #443026 !important;
+        border-color: #443026 !important;
+    }
+
+.skin-blue .user-panel > .info, .skin-blue .user-panel > .info > a {
+    color: #ef920d !important;
+}
+.box-event {
+    display: flex;
+    text-align: center;
+    font-size: 11px;
+    height: 30px;
+    width: 100%;
+    background-color: #dca025;
+    position: absolute;
+    right: 0px;
+    border: 0;
+    top: 0;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+}
+a.box-event:focus, a.box-event:hover {
+    color: #fff;
+    background-color: #555658;
+}

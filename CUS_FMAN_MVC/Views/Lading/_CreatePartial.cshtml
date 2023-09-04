@@ -1,0 +1,375 @@
+﻿@{
+    int _pack = 0, _service = 0, _pay = 0;
+}
+@using NetCoSoft.ShareData.Core;
+<script src="/ScriptSys/AddLadingScript.js"></script>
+<!-- ./wrapper -->
+<div class="modal modaladd fade bs-example-modal-full" style="overflow-y:hidden;" id="addlading" tabindex="-1" role="application" aria-hidden="true">
+    <div class="modal-dialog modal-wide modal-full">
+        <div class="modal-content">
+            <form role="form" class="st-form scroller" id="style-3">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+                    <h4 class="modal-title display-inline-block">THÊM VẬN ĐƠN</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row none">
+                        <div class="extend-container col-md-6">
+                            <div class="extend-head st-bg-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="extend-title">THÔNG TIN NGƯỜI GỬI</span>
+                                    </div>
+                                    <div class="col-md-6 select-in-title">
+                                        <select class="inputText select-choice address-send-id" name="AddressID">
+                                            <option value="0">---- Địa chỉ có sẵn ----</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="extend-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText sender-name" name="SenderName">
+                                            <span class="label">Tên người gửi</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText sender-phone" name="SenderPhone">
+                                            <span class="label">Số điện thoại người gửi</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText sender-address" name="SenderAddress">
+                                            <span class="label">Địa chỉ nhận hàng</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText sender-company" name="SenderCompany">
+                                            <span class="label">Công ty người gửi</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extend-container col-md-6">
+                            <div class="extend-head st-bg-1">
+                                <span class="extend-title">Thông tin người nhận</span>
+                            </div>
+                            <div class="extend-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText recipient-name" name="RecipientName">
+                                            <span class="label">Tên người nhận</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText recipient-phone" name="RecipientPhone">
+                                            <span class="label">Số điện thoại người nhận</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText recipient-address" name="RecipientAddress">
+                                            <span class="label">Địa chỉ người nhận</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText recipient-company" name="RecipientCompany">
+                                            <span class="label">Công ty người nhận</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extend-container col-md-9">
+                            <div class="extend-head st-bg-3">
+                                <span class="extend-title">Thông tin dịch vụ</span>
+                            </div>
+                            <div class="extend-body">
+                                <div class="row services">
+                                    @foreach (Serviceld serviceType in Enum.GetValues(typeof(Serviceld)))
+                                    {
+                                        var value = (int)serviceType;
+                                        <div class="col-md-4 col-sm-12">
+                                            <label class="checkbox-inline nowrap">
+                                                @if (_service == 0)
+                                                {
+                                                    <input type="radio" value="@value" class="main-service" name="ServiceId" checked="checked"> @serviceType.GetEnumDescription()
+                                                }
+                                                else
+                                                {
+                                                    <input type="radio" value="@value" class="main-service" name="ServiceId"> @serviceType.GetEnumDescription()
+                                                }
+                                            </label>
+                                        </div>
+                                        _service++;
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extend-container col-md-3">
+                            <div class="extend-head st-bg-3">
+                                <span class="extend-title">Thanh toán</span>
+                            </div>
+                            <div class="extend-body">
+                                @foreach (PaymentType paymentType in Enum.GetValues(typeof(PaymentType)))
+                                {
+                                    var value = (int)paymentType;
+                                    if (value != (int)PaymentType.Another && value != (int)PaymentType.Done)//Không hiển thị hình thức khác or đã thanh toán
+                                    {
+                                        <div class="col-md-12 col-sm-12">
+                                            <label class="checkbox-inline">
+                                                @if (_pay == 0)
+                                                {
+                                                    <input type="radio" value="@value" class="payment-type" name="PaymentId" checked="checked"> @paymentType.GetEnumDescription()
+                                                }
+                                                else
+                                                {
+                                                    <input type="radio" value="@value" class="payment-type" name="PaymentId"> @paymentType.GetEnumDescription()
+                                                }
+                                            </label>
+                                        </div>
+                                        _pay++;
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <div class="extend-container col-md-12">
+                            <div class="extend-head st-bg-2">
+                                <span class="extend-title">Thông tin đơn hàng</span>
+                            </div>
+                            <div class="extend-body">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="st-select">
+                                            <select class="inputText select-choice city-send" name="CitySendId">
+                                                <option value="">Tỉnh</option>
+                                            </select>
+                                            <span class="label">Tỉnh đi</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="st-select">
+                                            <select class="inputText select-choice city-recipient" name="CityRecipientId">
+                                                <option value="">Tỉnh</option>
+                                            </select>
+                                            <span class="label">Tỉnh đến</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText description" name="Description">
+                                            <span class="label">Nội dung hàng hóa</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText noted" name="Noted">
+                                            <span class="label">Ghi chú</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText weight" name="Weight">
+                                            <span class="label">Trọng lượng (kg)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText number-item" name="Number">
+                                            <span class="label">Số kiện</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText length" name="Length">
+                                            <span class="label">Dài (cm)</span>
+                                            <span class="label right"> x </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText width" name="Width">
+                                            <span class="label">Rộng (cm)</span>
+                                            <span class="label right"> x </span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText height" name="Height">
+                                            <span class="label">Cao (cm)</span>
+                                            <span class="label right"> = </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText txtMass" readonly="readonly" name="Mass" value="0">
+                                            <span class="label">Khối lượng (m3)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extend-container col-md-12">
+                            <div class="extend-head st-bg-4">
+                                <span class="extend-title">Dịch vụ giá trị gia tăng</span>
+                            </div>
+                            <div class="extend-body">
+                                <div class="row service-another">
+                                    @foreach (ServiceGTGT paymentType in Enum.GetValues(typeof(ServiceGTGT)))
+                                    {
+                                        var value = (int)paymentType;
+                                        <div class="col-md-2 col-sm-12">
+                                            <label class="checkbox-inline nowrap">
+                                                <input type="checkbox" value="@value" class="another-service" name="AnotherServiceId"> @paymentType.GetEnumDescription()
+                                            </label>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extend-container col-md-3 insured-detail display-none">
+                            <div class="extend-head st-bg-5">
+                                <span class="extend-title">Khai giá</span>
+                            </div>
+                            <div class="extend-body">
+                                <div class="row service-another">
+                                    <div class="col-md-6">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText insured" name="InsuredPrice">
+                                            <span class="label">Tiền Khai Giá</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 disabled">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText insured-amount" readonly="readonly" name="Insured" value="0">
+                                            <span class="label">Cước</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extend-container col-md-3 cod-detail display-none">
+                            <div class="extend-head st-bg-5">
+                                <span class="extend-title">COD</span>
+                            </div>
+                            <div class="extend-body">
+                                <div class="row service-another">
+                                    <div class="col-md-6">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText cod" name="COD">
+                                            <span class="label">Số tiền</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 disabled">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText cod-amount" readonly="readonly" name="CODPrice" value="0">
+                                            <span class="label">Cước</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extend-container col-md-6 pack-detail display-none">
+                            <div class="extend-head st-bg-5">
+                                <span class="extend-title">Đóng gói</span>
+                            </div>
+                            <div class="extend-body">
+                                <div class="row service-another">
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            @foreach (PackType packType in Enum.GetValues(typeof(PackType)))
+                                            {
+                                                var value = (int)packType;
+                                                <div class="col-md-6 col-sm-12 col-xs-12 text-left">
+                                                    <label class="checkbox-inline">
+                                                        @if (_pack == 0)
+                                                        {
+                                                            <input type="radio" value="@value" class="pack-type" name="PackId" checked="checked"> @packType.GetEnumDescription()
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="radio" value="@value" class="pack-type" name="PackId"> @packType.GetEnumDescription()
+                                                        }
+                                                    </label>
+                                                </div>
+                                                _pack++;
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="inputField active">
+                                            <input type="text" class="inputText pack-amount" readonly="readonly" name="PackPrice" value="0">
+                                            <span class="label">Phí đóng gói</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extend-container col-md-12 end">
+                            <div class="extend-head st-bg-6">
+                                <span class="extend-title">Cước phí</span>
+                            </div>
+                            <div class="extend-body">
+                                <div class="row">
+                                    <div class="col-md-2 disabled">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText AmountPriceMain" readonly="readonly" value="0">
+                                            <span class="label">Giá gốc</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 disabled">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText AmountPPXDPrice" readonly="readonly" value="0">
+                                            <span class="label">Phụ phí xăng dầu</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 disabled">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText AmountTHBBPrice" readonly="readonly" value="0">
+                                            <span class="label">Thu hồi biên bản</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 disabled">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText AmountBPPrice" readonly="readonly" value="0">
+                                            <span class="label">Báo phát</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 disabled">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText VAT" readonly="readonly" value="10%">
+                                            <span class="label">VAT</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 disabled">
+                                        <div class="inputField">
+                                            <input type="text" class="inputText total-price" readonly="readonly" value="0">
+                                            <span class="label">Tổng tiền</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Thêm vận đơn" class="btn btn-save-lading" />
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<a class="btn btn-default btn-view-detail display-none" data-toggle="modaladd" href="#addlading"></a>

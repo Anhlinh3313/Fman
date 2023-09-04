@@ -1,0 +1,284 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vận chuyển cho thương mại điện tử | Log in - </title>
+    <link rel="icon" href="~/Content/img/favicon.ico" id="Favicon">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="/content/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/content/dist/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="/content/plugins/iCheck/square/blue.css">
+    <link href="/Content/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/css/reponsive.css" rel="stylesheet" />
+    @* ================================= *@
+    <link href="~/Content/css/loader.css" rel="stylesheet" />
+    @* ================================= *@
+    <link id="css_publish_color" href="~/Content/css/color_web_custom/publish.css" rel="stylesheet" disabled />
+    <link id="css_flashship_color" href="~/Content/css/color_web_custom/flashship.css" rel="stylesheet" disabled />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!-- BEGIN BODY -->
+<body class="hold-transition login-page">
+    <style>
+        .display-none {
+            display: none !important;
+        }
+        .border-error{
+            border-color:red !important;
+        }
+        .icon-error {
+            color: red !important;
+        }
+    </style>
+    <div class="login-box">
+        <div class="login-logo div-logo">
+            <a href="/"><img src="" style="margin: 5px auto;" height="110" id="Logo-Company" class="img-responsive logo"></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            @*<p class="login-box-msg"></p>
+                <div>
+                </div>*@
+            <main id="main" class="main">
+                <div class="">
+                    <div class="row">
+                    </div>
+                    @*<div class="alert alert-success notification-form-success"></div>
+                        <div class="alert alert-danger notification-form-error"></div>*@
+                    <div class="row">
+
+                        <div class="col-sm-5 col-md-4 nav-left">
+                            <aside class="sidebar">
+                                <div class="block block-features">
+                                    <div class="block-title">
+                                        <span class="companyNameJS"></span> có gì hay?
+                                    </div>
+                                    <div class="block-content">
+                                        <ul>
+                                            <li>
+                                                Phủ sóng 99% huyện xã
+                                                <span>
+                                                    Lấy hàng / Giao hàng trên 11.000 huyện xa trên toàn quốc
+                                                </span>
+                                            </li>
+                                            <li>
+                                                App cho iOS và Android
+                                                <span>Đăng đơn - Tracking - Xử lý đơn hàng mọi lúc mọi nơi trên điện thoại! </span>
+                                            </li>
+                                            <li>
+                                                Giao nhanh không kịp hủy
+                                                <span>Giao nội tỉnh 6-12h</span>
+                                                <span>Giao nội miền 24-36h</span>
+                                                <span>Giao liên miền 48h</span>
+                                            </li>
+                                            <li>
+                                                Đối soát trả tiền nhanh
+                                                <span>Chuyển khoản vào tài khoản NH</span>
+                                                <span>3 lần/tuần vào thứ 2/4/6</span>
+                                            </li>
+                                            <li>
+                                                Miễn phí giao nhiều lần
+                                            </li>
+                                            <li>
+                                                Miễn phí thu hộ tiền
+                                            </li>
+                                            <li>
+                                                Giao hàng linh hoạt
+                                                <span>Linh hoạt giao hàng cho khách chọn, đổi địa chỉ giao, đổi tiền thu hộ, đổi SĐT, đổi người nhận hàng,…</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                        <div class="col-sm-7 col-md-8" id="form-resiger">
+                            <!-- BEGIN:  Đăng ký dịch vụ -->
+                            <div class="block block-signup">
+                                <div class="block-title" style="text-align: left;">
+                                    ĐĂNG KÝ THÀNH VIÊN
+                                </div>
+                                <div class="block-content form-1" style="display: block;">
+                                    <form action="/dang-ky.html" id="ShopQuickRegisterForm" method="post" accept-charset="utf-8" novalidate="novalidate">
+                                        <div style="display:none;"><input type="hidden" name="_method" value="POST"></div><input type="hidden" name="data[NewShop][act]" value="login" id="NewShopAct">
+                                        <div class="form-group has-feedback">
+                                            <input type="text" class="name form-control" name="CustomerName" id="CustomerName" placeholder="Tên công ty, tên shop">
+                                            <span class="fa fa-user-secret form-control-feedback fa-name"></span>
+                                            <label class="lbl-name display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input type="text" class="phone form-control" name="Phone" id="Phone" placeholder="Điện thoại">
+                                            <span class="fa fa-phone form-control-feedback fa-phone"></span>
+                                            <label class="lbl-phone display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input type="email" class="email form-control" name="Email" id="Email" placeholder="Email">
+                                            <span class="glyphicon glyphicon-envelope form-control-feedback fa-email"></span>
+                                            <label class="lbl-email display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input type="password" class="password form-control" name="PassWord" id="PassWord" placeholder="Mật khẩu">
+                                            <span class="glyphicon glyphicon-lock form-control-feedback fa-password"></span>
+                                            <label class="lbl-password display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input type="password" class="confirmPassword form-control" name="ConfirmPassword" id="ConfirmPassword" placeholder="Xác nhận mật khẩu">
+                                            <span class="glyphicon glyphicon-lock form-control-feedback fa-confirmPassword"></span>
+                                            <label class="lbl-confirmPassword display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="row form-address">
+
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input type="text" class="form-control address" id="address" name="Address" placeholder="Địa chỉ GoogleMaps">
+                                            <input type="hidden" class="form-control cityid" id="cityId" name="CityId">
+                                            <input type="hidden" class="form-control districtid" id="districtId" name="DistrictId">
+                                            <input type="hidden" class="form-control wardid" id="wardid" name="WardId">
+                                            <input type="hidden" class="form-control lat" id="lat" name="Lat">
+                                            <input type="hidden" class="form-control lng" id="lng" name="Lng">
+                                            <span class="fa fa-map-pin form-control-feedback fa-address"></span>
+                                            <label class="lbl-address display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group col-md-4 padding-left-0 province-div">
+                                                <select name="province" required class="form-control select-choice chosen-select province" data-placeholder="Chọn tỉnh thành" placeholder="Vui lòng chọn Tỉnh/Thành">
+                                                    <option value="">Chọn tỉnh thành</option>
+                                                </select>
+                                                <label class="lbl-province display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                            </div>
+                                            <div class="form-group col-md-4 no-padding district-div">
+                                                <select name="district" class="form-control select-choice chosen-select district" data-placeholder="Chọn tỉnh thành" placeholder="Vui lòng chọn Tỉnh/Thành">
+                                                    <option value="">Chọn quận huyện</option>
+                                                </select>
+                                                <label class="lbl-district display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                            </div>
+                                            <div class="form-group col-md-4 padding-right-0 ward-div">
+                                                <select name="ward" class="form-control select-choice chosen-select ward" data-placeholder="Chọn tỉnh thành" placeholder="Vui lòng chọn Tỉnh/Thành">
+                                                    <option value="">Chọn phường xã</option>
+                                                </select>
+                                                <label class="lbl-ward display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input name="AddressNote" class="address-note form-control" data-message="Địa chỉ lấy hàng" id="AddressNote" placeholder="Địa chỉ chi tiết(Ngõ, Ngách, Tòa nhà,...)" autocomplete="off" autocorrect="off" type="text" id="NewShopFirstAddress">
+                                            <span class="fa fa-road form-control-feedback fa-address-note"></span>
+                                            <label class="lbl-address-note display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="block-title">
+                                            Thông tin đối soát chuyển khoản:
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input name="AccountName" class="account-name form-control" id="AccountName" data-message="Chủ tài khoản ngân hàng" placeholder="Chủ tài khoản ngân hàng" type="text" id="account-name">
+                                            <span class="fa fa-university form-control-feedback fa-account-name"></span>
+                                            <label class="lbl-account-name display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input name="AccountBank" class="account-bank form-control" id="AccountBank" data-message="Số tài khoản ngân hàng" placeholder="Số tài khoản ngân hàng" type="text" id="account-bank">
+                                            <span class="fa fa-credit-card form-control-feedback fa-account-bank"></span>
+                                            <label class="lbl-account-bank display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="form-group">
+                                            <select name="bank" class="form-control select-choice chosen-select bank" data-placeholder="Chọn ngân hàng" placeholder="Vui lòng chọn ngân hàng">
+                                                <option value="">Chọn ngân hàng</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group branch-div">
+                                            <select name="BranchId" class="form-control select-choice chosen-select branch" data-placeholder="Chọn chi nhánh ngân hàng" placeholder="Chọn chi nhánh ngân hàng">
+                                                <option value="">Chọn chi nhánh ngân hàng</option>
+                                            </select>
+                                            <label class="lbl-branch display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message"></span></label>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <label class="font-red-haze lblmessage display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message">Dữ liệu không hợp lệ!</span></label>
+                                        </div>
+                                    </form>
+                                    @*<div class="form-action">
+                                            <button type="button" class="btn btn-100 form-step-1" data-loading-text="<i class='fa fa-refresh fa-spin'></i>">Đăng KÝ NGAY</button>
+                                        </div>*@
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <a href="/dang-nhap.html" class="btn btn-warning"> <i class="fa fa-arrow-left"></i> Đăng nhập</a>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <button type="submit" id="btn-register" class="btn btn-vse btn-block btn-flat btn-register"> <i class="fa fa-user"></i> Đăng ký</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END: Side bar -->
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+    <link rel="stylesheet" href="/content/chosen/css/bootstrap-chosen.css">
+    <!-- jQuery 2.2.3 -->
+    <script src="/content/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="/content/bootstrap/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="/content/plugins/iCheck/icheck.min.js"></script>
+    <!--Custom-->
+    <script src="~/Content/assets/plugins/chosen.jquery.js"></script>
+    <script src="~/Tool_JS/js/jquery.cookie.js"></script>
+    <script src="/Tool_JS/js/Enviroment.js"></script>
+    <script src="~/Tool_JS/js/ToolFunction.js"></script>
+    @* Test *@
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk-pZrvPGhFTe20y2UTwSixrM_tIS3o4I&sensor=false&amp;libraries=places"></script>
+
+    @* ================================= *@
+    <script src="~/ScriptSys/GetData/title.js"></script>
+    <script src="~/ScriptSys/GetData/GetData.js"></script>
+    <script src="/ScriptSys/RegisterScript.js"></script>
+
+    <div id="loading" style="display:none">
+        <div class="lds-css" style="padding: 15px 90px;">
+            <div class="lds-gear" style="100%;height:100%">
+                <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <p>ĐANG XỬ LÝ, VUI LÒNG ĐỢI...</p>
+    </div>
+    <script>
+        $('#btn-register').on('click', function () {
+            $("#btn-register").attr("disabled", "disabled");
+            setTimeout(function () {
+                $("#btn-register").prop("disabled", false);
+            }, 500)
+        })
+    </script>
+</body>
+<!-- END BODY -->
+</html>

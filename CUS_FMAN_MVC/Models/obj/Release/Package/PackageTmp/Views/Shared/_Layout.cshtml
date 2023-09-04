@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - </title>
+    <link rel="icon" href="" id="Favicon">
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="~/Content/bootstrap/data-tables/DT_bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="/ScriptSys/FormValidation/formValidation.min.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Content/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="~/Content/assets/plugins/data-tables/jquery.datatable.1.10.12.js"></script>
+    <script src="~/Content/bootstrap/data-tables/DT_bootstrap.js"></script>
+    <script src="~/Tool_JS/js/CryptoJS.js"></script>
+    <script src="~/Tool_JS/js/ToolFunction.js"></script>
+    <script src="~/Tool_JS/js/formatmoney.js"></script>
+    <script src="~/Tool_JS/js/CryptoJS.js"></script>
+    <script src="~/Tool_JS/js/ScripBarCode.js"></script>
+    <link href="~/Content/assets/plugins/bootstrap-multiselect/bootstrap-multiselect.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/select2/select2_conquer.css" rel="stylesheet" />
+    <link href="~/Content/plugins/select2/select2.min.css" rel="stylesheet" />
+    <script src="~/Content/assets/plugins/chosen.jquery.js"></script>
+
+    <script src="~/Content/bootstrap/js/moment.js"></script>
+    <script src="~/Content/Datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/JqueryDatatableEX/buttons.html5.min.js"></script>
+    <script src="~/Scripts/JqueryDatatableEX/dataTables.buttons.min.js"></script>
+    <script src="~/Scripts/JqueryDatatableEX/jszip.min.js"></script>
+    @*<script src="~/Tool_JS/js/Enviroment.js"></script>*@
+    <script src="~/Tool_JS/js/jquery.cookie.js"></script>
+    <script src="~/ScriptSys/account.js"></script>
+    <script src="~/Content/plugins/select2/select2.min.js"></script>
+    @* ================================= *@
+    <script src="~/ScriptSys/GetData/title.js"></script>
+    <script src="~/ScriptSys/GetData/GetData.js"></script>
+    @*<script src="~/ScriptSys/sys.js"></script>*@
+    @Scripts.Render("~/bundles/js")
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkR-wl8rYwyb5XhvinbcfZOuFsRV2IFDo&sensor=false&amp;libraries=places"></script>
+    @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfqPJqJnthPCSdgAs4pn1Gcc5RZrElg3U&sensor=false&amp;libraries=places"></script>*@
+    @*online*@ @*
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATzgv59sgNUWPRFGUJF5k8LRKJ291V0mY&sensor=false&amp;libraries=places"></script>*@
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="/ScriptSys/FormValidation/formValidation.min.js"></script>
+    <script src="/ScriptSys/FormValidation/bootstrap.min.js"></script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini" @*style="overflow:hidden;"*@>
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><img src="" alt="" height="50" id="Favicon-Company-Home" class="img-responsive"></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">
+                    <img src="" alt="" height="50" class="img-responsive" id="Logo-Company">
+                </span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <div class="rows">
+                    <div class="col-md-7" style="padding-left: 0;">
+                        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle navigation</span>
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <a href="/" class="logo-reponsive">
+                            <img src="" alt="Logo" height="30" class="img-responsive" />
+                        </a>
+                        <div>
+                            <!-- search form -->
+                            <div class="sidebar-formB">
+                                <div class="input-group">
+                                    <input type="text" name="code" class="form-control trackingNumber" placeholder="Mã đơn hàng">
+                                    <span class="input-group-btn">
+                                        <button type="button" name="search" style="height:28px" id="search-btn" class="btn btn-flat btn-tracking">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- /.search form -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                @Html.Action("CustomerPartial", "Home")
+                <ul class="sidebar-menu">
+                    <li class="@ViewBag.DashBroadActive treeview">
+                        <a href="@Url.Action("DashBroad", "DashBroad")">
+                            <i class="fa fa-tachometer"></i> <span> DashBroad</span>
+                        </a>
+                    </li>
+                    <li class="@ViewBag.CreateRequestActive treeview">
+                        <a href="@Url.Action("CreateRequest", "Lading")">
+                            <i class="fa fa-plus"></i> <span> Tạo yêu cầu nhận hàng</span>
+                        </a>
+                    </li>
+
+                    <li class="@ViewBag.ListRequest treeview">
+                        <a href="@Url.Action("RequestList", "Lading")">
+                            <i class="fa fa-list"></i> <span> Quản lý yêu cầu</span>
+                        </a>
+                    </li>
+                    <li class="@ViewBag.CreateActive treeview">
+                        <a href="@Url.Action("AddLading", "Lading")">
+                            <i class="fa fa-plus"></i> <span> Tạo đơn hàng</span>
+                        </a>
+                    </li>
+                    <li class="@ViewBag.ImportActive treeview">
+                        <a href="@Url.Action("ImportLading", "Lading")">
+                            <i class="fa fa-file-excel-o"></i> <span> Tạo đơn hàng Excel</span>
+                        </a>
+                    </li>
+                    @*<li class="@ViewBag.WaitingPickup treeview">
+                        <a href="@Url.Action("WaitingPickup", "Lading")">
+                            <i class="fa fa-spinner" aria-hidden="true"></i> <span> Đơn hàng chưa lấy</span>
+                        </a>
+                    </li>*@
+                    <li class="@ViewBag.ListLading treeview">
+                        <a href="@Url.Action("Index", "Lading")">
+                            <i class="fa fa-list"></i> <span> Quản lý đơn hàng</span>
+                        </a>
+                    </li>
+                    @*<li class="@ViewBag.SearchActive treeview">
+            <a href="@Url.Action("Search", "Lading")">
+                <i class="fa fa-search"></i> <span> Tìm kiếm đơn hàng</span>
+            </a>
+        </li>*@
+                    <li class="@ViewBag.Money treeview">
+                        <a href="@Url.Action("Money", "Price")">
+                            <i class="fa fa-money"></i> <span> Tiền thu hộ</span>
+                        </a>
+                    </li>
+                    <li class="@ViewBag.TransferActive treeview">
+                        <a href="@Url.Action("MoneyTransfer", "Price")">
+                            <i class="fa fa-refresh"></i> <span> Phiên thanh toán COD</span>
+                        </a>
+                    </li>
+                    <li class="@ViewBag.PaymentActive treeview">
+                        <a href="@Url.Action("Payment", "Price")">
+                            <i class="fa fa-money"></i> <span> Thanh toán cuối tháng</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#" target="_blank" rel="nofollow">
+                            <i class="fa fa-home"></i> <span> Điểm gửi hàng</span>
+                        </a>
+                    </li>
+                    @*<li class="treeview">
+            <a href="#">
+                <i class="fa fa-file-pdf-o"></i> <span> Mã giới thiệu</span>
+            </a>
+        </li>*@
+                    <li class="treeview">
+                        <a href="@Url.Action("TermAndCondition", "Home")">
+                            <i class="fa fa-info-circle"></i> <span> Thông tin</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        @RenderBody()
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.1
+            </div>
+            <strong>Copyright &copy; 2018 <a href="tansonnhat.vn" target="_blank" rel="nofollow" id="companyNameJS">TASETCO</a>.</strong> All rights
+            reserved.
+        </footer>
+    </div>
+    <div id="loading" style="display:none">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+                <div class="object" id="object_five"></div>
+                <div class="object" id="object_six"></div>
+            </div>
+            <p>ĐANG XỬ LÝ, VUI LÒNG ĐỢI...</p>
+        </div>
+
+    </div>
+    <!-- ./wrapper -->
+    <div class="modal fade bs-example-modal-lg" id="wide" tabindex="-1" role="basic" aria-hidden="true">
+        <div class="modal-dialog modal-wide modal-lg" style="width:1024px">
+            <div class="modal-content scroller" id="style-3">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">THÔNG TIN VẬN ĐƠN</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="extend-main-container">
+                            <div class="extend-head">
+                                <span class="extend-title">CHI TIẾT ĐƠN HÀNG : <span class="control-label detail-code orange"></span></span>
+                                @*<i class="mod-advance fa fa-angle-down pull-right" data-defaulttext="Advance" data-activetext="Close"></i>*@
+                            </div>
+                            <div class="extend-body extend-content-active">
+                                <div class="extend-container col-md-12">
+                                    <div class="extend-head">
+                                        <span class="extend-title">Thông Tin Chung</span>
+                                    </div>
+                                    <div class="extend-body row">
+                                        <div class="col-md-6">
+                                            <label>
+                                                Dịch vụ:
+                                                <span class="control-label detail-service-name"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>
+                                                DVGT:
+                                                <span class="control-label detail-support-service"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>
+                                                Trọng lượng:
+                                                <span class="control-label detail-weight"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>
+                                                Kích thước:
+                                                <span class="control-label detail-demention"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 box-cod">
+                                            <label>
+                                                Thu hộ (COD):
+                                                <span class="control-label detail-cod"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 box-insured">
+                                            <label>
+                                                Khai giá:
+                                                <span class="control-label detail-insured"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>
+                                                Cước phí:
+                                                <span class="control-label detail-pricemain"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>
+                                                Phụ phí xăng dầu:
+                                                <span class="control-label detail-ppxdprice"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 box-thbbprice">
+                                            <label>
+                                                Phụ phí VSVX:
+                                                <span class="control-label detail-vsvxprice"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 box-bpprice">
+                                            <label>
+                                                Phí DVGT:
+                                                <span class="control-label detail-dvgtprice"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 box-cod">
+                                            <label>
+                                                Phụ phí khác:
+                                                <span class="control-label detail-otherprice"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>
+                                                Tổng tiền:
+                                                <span class="control-label detail-amount"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="extend-container col-md-4">
+                                        <div class="extend-head">
+                                            <span class="extend-title">Thông Tin Đơn Hàng</span>
+                                        </div>
+                                        <div class="extend-body">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Thời gian tạo:
+                                                    <span class="control-label detail-create-date"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Thời gian giao hàng:
+                                                    <span class="control-label detail-finish-date"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Người nhận thực tế:
+                                                    <span class="control-label detail-receive"></span>
+                                                </label>
+                                                <label class="pull-right">
+                                                    <a target="_blank" class="imageSignal" href="#">chữ ký</a>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Tình trạng:
+                                                    <span class="control-label detail-status"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Nội dung gói hàng:
+                                                    <span class="control-label detail-description"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Chi chú:
+                                                    <span class="control-label detail-noted"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="extend-container col-md-4">
+                                        <div class="row extend-head">
+                                            <span class="extend-title">Thông Tin Nhận Hàng</span>
+                                        </div>
+                                        <div class="extend-body">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Tên:
+                                                    <span class="control-label detail-sender-name"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Địa chỉ:
+                                                    <span class="control-label detail-from-address"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Số ĐT:
+                                                    <span class="control-label detail-from-phone"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Trạm nhận:
+                                                    <span class="control-label detail-from-hub"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="extend-container col-md-4">
+                                        <div class="extend-head">
+                                            <span class="extend-title">Thông Tin Bên Nhận</span>
+                                        </div>
+                                        <div class="extend-body">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Tên:
+                                                    <span class="control-label detail-recipient-name"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Địa chỉ:
+                                                    <span class="control-label detail-recipient-address"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Số ĐT:
+                                                    <span class="control-label detail-recipient-phone"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>
+                                                    Trạm phát:
+                                                    <span class="control-label detail-to-hub"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ./thông tin đơn hàng -->
+                            </div>
+                        </div>
+                        <div class="extend-main-container">
+                            <div class="extend-head">
+                                <span class="extend-title">CHI TIẾT HÀNH TRÌNH</span>
+                                @*<i class="mod-advance fa fa-angle-down pull-right" data-defaulttext="Advance" data-activetext="Close"></i>*@
+                            </div>
+                            <div class="extend-body extend-content-active">
+                                <table class="table table-res table-shop" id="table-history-lading" role="grid">
+                                    <thead>
+                                        <tr>
+                                            <th>Thời gian</th>
+                                            <th>Nhân viên</th>
+                                            <th>Địa điểm</th>
+                                            <th>Trạng thái</th>
+                                            <th>Ghi chú</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal">In hóa đơn</button>*@
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <a class="btn btn-default btn-view-detail display-none" data-toggle="modal" href="#wide"></a>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

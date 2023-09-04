@@ -1,0 +1,10 @@
+E:\Lam\Angular\VietStarExpress\bin\ApplicationInsights.config
+E:\Lam\Angular\VietStarExpress\bin\NetCo_CustomerSite.dll.config
+E:\Lam\Angular\VietStarExpress\bin\NetCo_CustomerSite.dll
+E:\Lam\Angular\VietStarExpress\bin\NetCo_CustomerSite.pdb
+E:\Lam\Angular\VietStarExpress\bin\Newtonsoft.Json.dll
+E:\Lam\Angular\VietStarExpress\obj\Release\PCSWebAPP.csprojResolveAssemblyReference.cache
+E:\Lam\Angular\VietStarExpress\obj\Release\PCSWebAPP.csproj.CoreCompileInputs.cache
+E:\Lam\Angular\VietStarExpress\obj\Release\PCSWebAPP.csproj.CopyComplete
+E:\Lam\Angular\VietStarExpress\obj\Release\NetCo_CustomerSite.dll
+E:\Lam\Angular\VietStarExpress\obj\Release\NetCo_CustomerSite.pdb

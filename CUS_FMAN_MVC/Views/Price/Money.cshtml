@@ -1,0 +1,295 @@
+﻿
+@{
+    ViewBag.Title = "Quản lý công nợ";
+    ViewBag.Money = "active";
+}
+<style>
+    .fa {
+        font-size: inherit;
+    }
+
+    .scroller {
+        max-height: 810px !important;
+    }
+</style>
+<div class="content-wrapper scroller" id="style-10">
+    <div class="col-lg-12">
+        <section class="content-header">
+            <h1>
+                Quản lý công nợ
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("DashBroad", "DashBroad")"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Lịch sử thanh toán COD</li>
+            </ol>
+        </section>
+    </div>
+    <section class="content">
+        <div class="st-form">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="inputField active">
+                        <div class="input-group date" data-provide="datepicker" data-date-format="mm-dd-yyyy">
+                            <input type="text" class="inputText search-from-date" readonly>
+                            <span class="input-group-btn">
+                                <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                            </span>
+                            <span class="label">Từ ngày (mm/dd/yyyy)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="inputField active">
+                        <div class="input-group date" data-provide="datepicker" data-date-format="mm-dd-yyyy">
+                            <input type="text" class="inputText search-to-date" readonly>
+                            <span class="input-group-btn">
+                                <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                            </span>
+                            <span class="label">Đến ngày (mm/dd/yyyy)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-danger btn-search margin-top-10">Tìm kiếm</button>
+                </div>
+            </div>
+        </div>
+        <div class="sumary-price">
+            <div class="ctl-show-data" style="border: 1px solid #ccc;;padding:15px">
+                <div class="dataTables_wrapper form-inline no-footer pageajax">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" role="grid">
+                            <thead>
+                                <tr>
+                                    <th>Loại</th>
+                                    <th>Tiền thu hộ	</th>
+                                    <th>Tiền phải trả</th>
+                                    <th style="display:none">Phí giao hàng</th>
+                                    <th style="display:none">Cước DVGT</th>
+                                    <th style="display:none">Cước COD</th>
+                                    <th>Tiền đối soát</th>
+                                    <th style="width:55px">Số ĐH</th>
+                                    <th>Xem đơn hàng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Đã thanh toán</th>
+                                    <th>0</th>
+                                    <th>0</th>
+                                    <th style="display:none">0</th>
+                                    <th style="display:none">0</th>
+                                    <th style="display:none">0</th>
+                                    <th>0</th>
+                                    <th>0</th>
+                                    <th>
+                                        <a class="typeCOD" typeName="Đã thanh toán" href="#" typeCOD="0" style="cursor:pointer">Xem phiên thanh toán</a>, 
+                                        <a class="typeCOD" typeName="Đã thanh toán" href="#" typeCOD="0" style="cursor:pointer">Xem chi tiết</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Tiền đã thu hộ</th>
+                                    <th><span class="info-box-number codDelivered">0</span></th>
+                                    <th><span class="info-box-number priceShipDelivered">0</span></th>
+                                    <th style="display:none"><span class="info-box-number priceShipDelivered"></span></th>
+                                    <th style="display:none"><span class="info-box-number priceDVGTDelivered"></span></th>
+                                    <th style="display:none"><span class="info-box-number priceCODDelivered"></span></th>
+                                    <th><span class="info-box-number priceDelivered text-success">0</span></th>
+                                    <th><span class="info-box-number count-codDelivered text-success">0</span></th>
+                                    <th><a class="typeCOD" typeName="Tiền đã thu hộ" onclick="ViewTableData()" typeCOD="2" style="cursor:pointer">Xem chi tiết</a></th>
+                                </tr>
+                                <tr>
+                                    <th>Tiền đang luân chuyển</th>
+                                    <th><span class="info-box-number codDelivering">0</span></th>
+                                    <th><span class="info-box-number priceShipDelivering">0</span></th>
+                                    <th style="display:none"><span class="info-box-number priceShipDelivering"></span></th>
+                                    <th style="display:none"><span class="info-box-number priceDVGTDelivering"></span></th>
+                                    <th style="display:none"><span class="info-box-number priceCODDelivering"></span></th>
+                                    <th><span class="info-box-number priceDelivering text-success">0</span></th>
+                                    <th><span class="info-box-number count-codDelivering text-success">0</span></th>
+                                    <th><a class="typeCOD" typeName="Tiền đang luân chuyển" onclick="ViewTableData()" typeCOD="1" style="cursor:pointer">Xem chi tiết</a></th>
+                                </tr>
+                                <tr>
+                                    <th>Không giao được hàng</th>
+                                    <th><span class="info-box-number codReturn">0</span></th>
+                                    <th><span class="info-box-number priceShipReturn">0</span></th>
+                                    <th style="display:none"><span class="info-box-number priceShipReturn"></span></th>
+                                    <th style="display:none"><span class="info-box-number priceDVGTReturn"></span></th>
+                                    <th style="display:none"><span class="info-box-number priceCODReturn"></span></th>
+                                    <th><span class="info-box-number priceReturn text-success">0</span></th>
+                                    <th><span class="info-box-number count-codReturn text-success">0</span></th>
+                                    <th><a class="typeCOD" typeName="Không giao được hàng" onclick="ViewTableData()" typeCOD="3" style="cursor:pointer">Xem chi tiết</a></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="margin-top:15px;">
+                    <p>
+                        Tổng số tiền shop sẽ nhận được trong lần đối soát tới là: 0
+                    </p>
+                    <p>
+                        Tổng số hàng shop sẽ được trả lại trong lần đối soát tới là: 0 đơn hàng
+                    </p>
+                    <p>
+                        Tiền đối soát = Tiền thu hộ - Phí giao hàng - Phí cước DVGT	 (nếu có) - Phí cước COD (nếu có)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="col-lg-12">
+        <section class="content-header">
+            <h1>
+                Lịch sử các lượt đối soát
+            </h1>
+        </section>
+    </div>
+    <div class="clearfix"></div>
+    <section class="content">
+        <div class="ctl-show-data" style="border: 1px solid #ccc;padding:15px">
+            <div class="dataTables_wrapper form-inline no-footer pageajax">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="historyReport" role="grid">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã đối soát</th>
+                                <th>Tổng tiền</th>
+                                <th>Loại đối soát</th>
+                                <th>Ngày lập</th>
+                                <th>Trạm lập</th>
+                                <th>Trạng tháin</th>
+                                <!-- <th>Xem đơn hàng</th> -->
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a class="btn btn-default btn-loadmodal display-none" data-toggle="modal" href="#loadmodal">Show hang</a>
+    <div class="ladingModel modal fade bs-example-modal-lg ladings ladingedit" id="loadmodal" tabindex="-1" role="basic" aria-hidden="true">
+        <div class="modal-dialog modal-wide modal-lg st-form report-revenue message-bb">
+            <div class="modal-content" id="style-3">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">Danh sách đơn hàng <b id="nameModal"></b></h4>
+                </div>
+                <div class="modal-body box" style="padding:15px;">
+                    <div class="dataTables_wrapper form-inline no-footer pageajax">
+                        <table class="table table-striped table-bordered table-hover" id="report" role="grid">
+                            <thead>
+                                <tr>
+                                    <th>Tùy chọn</th>
+                                    <th>STT</th>
+                                    <th>Mã vận đơn</th>
+                                    <th>Thời gian gửi</th>
+                                    <th>Trạng thái</th>
+                                    <th>Dịch vụ</th>
+                                    <th>Người nhận</th>
+                                    <th>Điện thoại nhận</th>
+                                    <th>Địa chỉ nhận</th>
+                                    <th>Trọng lượng (kg)</th>
+                                    <th>Thu hộ (COD)</th>
+                                    <th>BHHH</th>
+                                    <th>Cước chính</th>
+                                    <th>Phí VSVX</th>
+                                    <th>Phí PPXD</th>
+                                    <th>Cước DVGT</th>
+                                    <th>Tổng cước</th>
+                                    <th>Hình thức thanh toán</th>
+                                </tr>
+                                <!-- <tr>
+                                    <th>Tùy chọn</th>
+                                    <th>STT</th>
+                                    <th>Mã BK</th>
+                                    <th>Tổng cước</th>
+                                    <th>Loại BK</th>
+                                    <th>Ngày lập</th>
+                                    <th>Trạm lập</th>
+                                    <th>Trạng tháin</th>
+                                </tr> -->
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default bt-close-loadmodal" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="btn btn-default btn-loadmodalShipment display-none" data-toggle="modal" href="#loadmodalShipment">Show hang</a>
+<div class="ladingModel modal fade bs-example-modal-lg ladings ladingedit" id="loadmodalShipment" tabindex="-1" role="basic" aria-hidden="true">
+    <div class="modal-dialog modal-wide modal-lg st-form report-revenue message-bb">
+        <div class="modal-content scroller" id="style-3">
+            <div class="modal-header">
+                <button type="button" style="color:#f39c28" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Danh sách đơn hàng</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" id="ladinginfo">
+                    <div class="lading-template ">
+                        <div class="extend-container col-md-12">
+                            <div class="extend-head st-bg-2">
+                                <span class="extend-title">
+                                    Thông tin bảng kê <span class="ladingnumber"></span>
+                                </span>
+                            </div>
+                            <div class="extend-body col-md-12">
+                                <div class="">
+                                    <div class="col-md-12">
+                                        <div class="box  listproterler" style="border: 0px;">
+                                            <div class="extend-body row" style="background: #f2f2f2;">
+                                                <div class="TableSearch">
+                                                    <table class="table table-condensed table-bordered table-hover" id="LoadDataShipment">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="stt"><label class="text-center"> <input class="selectAll" type="checkbox" /></label></th>
+                                                                <th class="stt">#</th>
+                                                                <th class="stt">STT</th>
+                                                                <th class="code">Mã VĐ</th>
+                                                                <th class="code">Mã tham chiếu</th>
+                                                                <th class="status">Trạng Thái VĐ</th>
+                                                                <th class="deliveryNote">Lý do giao hàng</th>
+                                                                <th class="cod">COD</th>
+                                                                <th class="pricemain">Cước phí</th>
+                                                                <th class="sender">Người nhận</th>
+                                                                <th class="sender">ĐT nhận</th>
+                                                                <th class="sender">Địa chỉ tiết</th>
+                                                                <th class="sender">Địa chỉ nhận</th>
+                                                                <th class="sender">Nội dung hàng hóa</th>
+                                                                <th class="sender">Ghi chú</th>
+                                                                <th class="status">Hình thức thanh toán</th>
+                                                                <th class="createddate">Ngày gửi</th>
+                                                                <th class="pricemain">TL(<span id="Weight"></span>)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default bt-close-loadmodal" data-dismiss="modal">Đóng</button>
+            </div>
+            <div style="display:none">
+                <div class="bb-barcode" style="width:100px; "></div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script src="/ScriptSys/PriceListScript.js"></script>

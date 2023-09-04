@@ -1,0 +1,170 @@
+﻿@using NetCoSoft.ShareData.Core;
+@{
+    ViewBag.Title = "Tìm kiếm đơn hàng";
+    ViewBag.SearchActive = "active";
+    //var defaultGridPageSize = Const.DefaultGridPageSize;
+    //var gridPageSizes = Const.GridPageSizes;
+}
+
+<section class="content-header">
+    <h1>
+        Tìm kiếm đơn hàng
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Tìm kiếm đơn hàng</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="st-form">
+        <form role="form">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="inputField">
+                        <input type="text" class="inputText search-code">
+                        <span class="label">Mã ĐH</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="inputField">
+                        <input type="text" class="inputText search-receive">
+                        <span class="label">Số điện thoại người nhận</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="inputField">
+                        <div class="input-group date" data-provide="datepicker" data-date-format="mm-dd-yyyy">
+                            <input type="text" class="inputText search-from-date" readonly>
+                            <span class="input-group-btn">
+                                <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                            </span>
+                            <span class="label">Từ ngày</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="inputField">
+                        <div class="input-group date" data-provide="datepicker" data-date-format="mm-dd-yyyy">
+                            <input type="text" class="inputText search-to-date" readonly>
+                            <span class="input-group-btn">
+                                <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                            </span>
+                            <span class="label">Đến ngày</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Dịch vụ</h3>
+                        </div>
+                        <div class="box-body row">
+                            @foreach (Serviceld serviceType in Enum.GetValues(typeof(Serviceld)))
+                            {
+                                var value = (int)serviceType;
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="@value" class="search-payment-type" name="search-payment-type"> @serviceType.GetEnumDescription()
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-md-3 col-sm-12">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Thanh toán</h3>
+                        </div>
+                        <div class="box-body row">
+                            @foreach (PaymentType paymentType in Enum.GetValues(typeof(PaymentType)))
+                            {
+                                var value = (int)paymentType;
+                                <div class="col-md-12 col-sm-12">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="@value" class="search-payment-type" name="search-payment-type"> @paymentType.GetEnumDescription()
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>*@
+                <div class="col-md-6 col-sm-12">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Dịch vụ giá trị gia tăng</h3>
+                        </div>
+                        <div class="box-body row">
+                            @foreach (ServiceGTGT paymentType in Enum.GetValues(typeof(ServiceGTGT)))
+                            {
+                                var value = (int)paymentType;
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="@value" class="search-another-service" name="search-another-service"> @paymentType.GetEnumDescription()
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions fluid row">
+                <div class="col-sm-12 col-md-12 text-center">
+                    <input type="button" value="Tìm kiếm" class="btn btn-success btn-search" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12 ctl-show-data">
+            <div class="order-items">
+                <div class="ember-view no-result center">
+                    <span class="no-result__image ic-no-order"></span>
+                    <div class="center no-result__text"> Không tìm thấy đơn hàng</div>
+                </div>
+            </div>
+            <div class="dataTables_wrapper form-inline no-footer pageajax display-none">
+                <div class="table-scrollable">
+                    <table class="table table-striped table-bordered table-hover dataTable no-footer table-res table-shop table-tracking" id="datapading" role="grid">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã vận đơn</th>
+                                <th>Thời gian gửi</th>
+                                <th>Người nhận</th>
+                                <th>Tỉnh đi</th>
+                                <th>Tỉnh đến</th>
+                                <th>Dịch vụ</th>
+                                <th>Thanh toán</th>
+                                <th>Tổng tiền</th>
+                                <th>Tùy chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        <div class="col-md-5 dataTables_info page-infor"></div>
+                        <div class="col-md-3 dataTables_length margin-top-10">
+                            <label>
+                                <select class="sizePageContent selectPageContent">
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="150">150</option>
+                                </select> dòng
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12 row-pageNumber">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="/ScriptSys/LadingSearchScript.js"></script>

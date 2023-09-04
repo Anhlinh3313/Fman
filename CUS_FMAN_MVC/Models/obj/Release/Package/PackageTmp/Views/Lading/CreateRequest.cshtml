@@ -1,0 +1,230 @@
+﻿@{ ViewBag.Title = "Tạo yêu cầu nhận hàng"; Layout = "~/Views/Shared/_Layout.cshtml"; ViewBag.CreateReuqestActive = "active"; }
+<style>
+    .st-form .row {
+        margin-bottom: 5px;
+    }
+</style>
+<link href="~/Content/plugins/jquery-validation/validationEngine.jquery.css" rel="stylesheet" />
+<div class="content-wrapper scroller" id="style-10">
+    <div class="col-md-12">
+        <section class="content-header">
+            <h1>
+                Tạo yêu cầu nhận hàng
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action(" Index ", "Home ")"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Tạo yêu cầu nhận hàng</li>
+            </ol>
+        </section>
+        <div class="st-form ladings">
+            <form id="ladingFrom" action="#">
+                <div class="success alert alert-success" style="display:none">
+                </div>
+                <div class="alert alert-danger error" style="display:none">
+                </div>
+                <div id="sender" class="row" data-district-id="" data-city-id="">
+                    <div class="extend-container col-md-12">
+                        <div class="extend-head st-bg-2">
+                            <div class="extend-title">
+                                Thông tin nhận hàng
+                            </div>
+                        </div>
+                        <div class="extend-body col-md-12">
+                            <div class="col-md-4 padding-right-0">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><i class="fa fa-user"></i> Họ Tên</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control sender-name validate[required]" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padding-right-0">
+                                    <div class="form-group">
+                                        <label><i class="fa fa-phone"></i> Điện thoại</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control sender-phone validate[required]" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="col-md-8" style="padding-left:0px">
+                                    <div class="form-group">
+                                        <label><i class="fa fa-sticky-note-o"></i></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control receiver-address-note" placeholder="Khu/Khối, Lô/Block">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-4 padding-right-0">
+                                    <div class="form-group">
+                                        <label><i class="fa fa-map-marker"></i> Địa chỉ nhận hàng</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control sender-address validate[required]" id="sender-address" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="width:100%"><i class="fa fa-credit-card"></i> Tỉnh thành</label>
+                                            <select id="province" name="province" class="form-control select2 select2-select validate[revalidateField]" data-placeholder="Chọn tỉnh thành"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="width:100%"><i class="fa fa-credit-card"></i> Quận huyện</label>
+                                            <select id="district" name="district" class="form-control select2 select2-select" data-placeholder="Chọn quận huyện"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="width:100%"><i class="fa fa-credit-card"></i> Phường xã</label>
+                                            <select id="ward" name="ward" class="form-control select2 select2-select" data-placeholder="Chọn phường xã"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 ">
+                                <div class="col-md-4 padding-right-0">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label><i class="fa fa-balance-scale"></i> Trọng lượng(kg)</label>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control weight validate[required, min[0.00001]">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 padding-right-0">
+                                        <div class="form-group">
+                                            <label><i class="fa fa-dropbox"></i> Số kiện</label>
+                                            <div class="input-group">
+                                                <input type="number" value="1" class="form-control  number validate[required, min[0.00001]]">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label><i class="fa fa-file-text-o"></i> Ghi chú</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control note">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*
+                    <div class="row" id="ladinginfo">
+                        <div class="request-info">
+                            <div class="extend-container col-md-12">
+                                <div class="extend-head st-bg-2">
+                                    <span class="extend-title">
+                                        Thông tin chi tiết
+                                    </span>
+                                </div>
+                                <div class="extend-body col-md-12">
+                                    <div class="">
+                                        <div class="col-md-4 padding-right-0">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label><i class="fa fa-balance-scale"></i> Trọng lượng(kg)</label>
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control weight validate[required, min[0.00001]">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 padding-right-0">
+                                                <div class="form-group">
+                                                    <label><i class="fa fa-dropbox"></i> Số kiện</label>
+                                                    <div class="input-group">
+                                                        <input type="number" value="1" class="form-control  number validate[required, min[0.00001]]">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+
+                <div id="receiver" class="row" data-district-id="" data-city-id="">
+                    <div class="extend-container col-md-12">
+                        <div class="extend-head st-bg-2">
+                            <div class="extend-title">
+                                Thông tin phát hàng (không bắt buộc)
+                            </div>
+                        </div>
+                        <div class="extend-body col-md-12">
+                            <div class="col-md-4 padding-right-0">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><i class="fa fa-user"></i> Họ tên nhận</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control receiver-name" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padding-right-0">
+                                    <div class="form-group">
+                                        <label><i class="fa fa-phone"></i> Điện thoại nhận</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control receiver-phone" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label><i class="fa fa-map-marker"></i> Địa chỉ nhận hàng</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control receiver-address " id="receiver-address" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-8">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label style="width:100%"><i class="fa fa-credit-card"></i> Tỉnh thành</label>
+                                        <select id="provinceTo" class="form-control select2 select2To validate[required]" data-placeholder="Chọn tỉnh thành"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label style="width:100%"><i class="fa fa-credit-card"></i> Quận huyện</label>
+                                        <select id="districtTo" class="form-control select2 select2To" data-placeholder="Chọn quận huyện"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label style="width:100%"><i class="fa fa-credit-card"></i> Phường xã</label>
+                                        <select id="wardTo" class="form-control select2 select2To" data-placeholder="Chọn phường xã"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button class="send-request btn btn-info" type="submit" style="margin-right:10px" id="add-lading">Gửi yêu cầu</button>
+                    <button class="cancel-request btn btn-danger" style="margin-right:10px" id="add-lading">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/Content/plugins/jquery-validation/jquery.validationEngine.js"></script>
+<script src="~/Content/plugins/jquery-validation/jquery.validationEngine.Custom.js"></script>
+<script src="~/Content/plugins/jquery-validation/jquery.validationEngine-vi.js"></script>
+<script src="/ScriptSys/CreateRequestScritp.js"></script>

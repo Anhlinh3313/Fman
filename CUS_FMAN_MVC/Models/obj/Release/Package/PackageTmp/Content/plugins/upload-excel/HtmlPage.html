@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/modernizr.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/infragistics.core.js"></script>
+    <script src="js/infragistics.lob.js"></script>
+    <script src="js/infragistics.documents.core.js"></script>
+    <script src="js/infragistics.excel.js"></script>
+    <script src="js/jsExcel.js"></script>
+    <script src="js/EditTable.js"></script>
+    <link href="css/infragistics.theme.css" rel="stylesheet" />
+    <link href="css/infragistics.css" rel="stylesheet" />
+    <link href="css/styleExcel.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <ol>
+            <li>Download this <a href="http://igniteui.com/HtmlSamples/javascript-excel-library/report.xlsx" download="">sample  Excel file</a></li>
+            <li>Click Choose File/Browse button below and pick the sample Excel file or another excel file.</li>
+        </ol>
+        <input type="file" id="input" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+        <div id="result"></div>
+        <table id="grid-excel"></table>
+    </div>
+    <div class="form-edit-cell">
+        <input type="text" id="google_address" class="edit-text" placeholder="" tabindex="1" />
+        <input type="button" class="edit-cancel" value="CANCEL" tabindex="2" />
+        <input type="button" class="edit-save" value="OK" tabindex="1" />
+    </div>
+    <div class="edit-triangle"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfqPJqJnthPCSdgAs4pn1Gcc5RZrElg3U&sensor=false&amp;libraries=places"></script>
+</body>
+</html>

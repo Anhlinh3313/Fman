@@ -1,0 +1,196 @@
+﻿@* @model NetCoSoft_DAL.Entity.Customer *@
+
+@{
+    ViewBag.Title = "Thông tin cá nhân";
+}
+<div class="content-wrapper scroller" id="style-10">
+    <section class="content-header">
+        <h1>
+            Thông tin cá nhân
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Thông tin cá nhân</li>
+        </ol>
+    </section>
+    <section class="content">
+        @* @if (Request.Cookies["cusInfo"] != null)
+            {
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="profile-user-img img-responsive img-circle" src="/content/dist/img/user.png" alt="User profile picture">
+                        <h3 class="profile-username text-center">@Model.CustomerName</h3>
+                        <p class="text-muted text-center">@Model.CompanyName</p>
+                    </div>
+                    <div class="col-md-9 form-horizontal">
+                        <div class="form-group has-feedback">
+                            <label class="col-md-2 control-label">Họ tên</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control name" name="CustomerName" value="@Model.CustomerName" placeholder="Họ và tên">
+                                <span class="fa fa-user-secret form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-md-2 control-label">Số điện thoại</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control phone" name="Phone" value="@Model.Phone" placeholder="Điện thoại">
+                                <span class="fa fa-phone form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-md-2 control-label">Địa chỉ e-mail</label>
+                            <div class="col-md-10">
+                                <input type="email" class="form-control" name="Email" value="@Model.Email" placeholder="Email" readonly>
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-md-2 control-label">Địa chỉ công ty</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control address" name="Address" value="@Model.Adress_CT" placeholder="Địa chỉ">
+                                <span class="fa fa-map-pin form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-md-2 control-label">Địa chỉ lấy hàng</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="Address" value="@Model.Address" readonly placeholder="Địa chỉ lấy hàng">
+                                <span class="fa fa-map-pin form-control-feedback"></span>
+                                <div class="has-error">
+                                    <label class="control-label" style="padding-top:0px">Thay đổi địa chỉ lấy hàng vui lòng liên hệ bộ phận chăm sóc khách hàng!</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-md-2 control-label">Tên Công Ty(SHOP)</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control company" name="Company" value="@Model.CompanyName" placeholder="Công ty">
+                                <span class="fa fa-archive form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="success alert alert-success" style="display:none">
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-md-2 control-label"></label>
+                            <div class="col-md-10">
+                                <input class="btn btn-success btn-saveinfo" value="Lưu thông tin" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            } *@
+        <div class="row">
+            <div class="col-md-3">
+                <img class="profile-user-img img-responsive img-circle" src="/content/dist/img/user.png" alt="User profile picture">
+                <h3 class="profile-username text-center name"><label class="name"></label></h3>
+                <p class="text-muted text-center"><label class="nameEn"></label></p>
+            </div>
+            <div class="col-md-9 form-horizontal">
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Họ tên</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control name" name="CustomerName" placeholder="Họ và tên">
+                        <span class="fa fa-user-secret form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Số điện thoại</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control phone" name="Phone" placeholder="Điện thoại">
+                        <span class="fa fa-phone form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Địa chỉ e-mail</label>
+                    <div class="col-md-10">
+                        <input type="email" class="form-control email" name="Email" placeholder="Email" readonly>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                </div>
+                <!-- <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Địa chỉ công ty</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control addressEn" name="AddressEn" placeholder="Địa chỉ">
+                        <span class="fa fa-map-pin form-control-feedback"></span>
+                    </div>
+                </div> -->
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Địa chỉ nhận hàng</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control address" name="Address" readonly placeholder="Địa chỉ nhận hàng">
+                        <span class="fa fa-map-pin form-control-feedback"></span>
+                        <div class="has-error">
+                            <label class="control-label" style="padding-top:0px">Thay đổi địa chỉ nhận hàng vui lòng liên hệ bộ phận chăm sóc khách hàng!</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Tên Công Ty(SHOP)</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control nameEn" name="nameEn" placeholder="Công ty">
+                        <span class="fa fa-archive form-control-feedback"></span>
+                    </div>
+                </div>
+                @* Đổi mật khẩu *@
+                <div class="form-group has-feedback">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10">
+                        <button type="button" class="btn btn-primary" onclick="toggleChangePassword()">Đổi mật khẩu</button>
+                    </div>
+                </div>
+                <div class="change-password" hidden>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Nhập mật khẩu cũ</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" id="oldPassword" name="nhập mật khẩu cũ" placeholder="nhập mật khẩu cũ" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Nhập mật khẩu mới</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" id="newPassword" name="nhập mật khẩu mới" placeholder="nhập mật khẩu mới" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Nhập lại mật khẩu</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" id="confirmPassword" name="nhập lại mật khẩu mới" placeholder="nhập lại mật khẩu mới" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback lblmessage display-none">
+                        <label class="col-md-2 control-label"></label>
+                        <div class="col-md-6">
+                            <label class="font-red-haze" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message">Dữ liệu không hợp lệ!</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary btn-block btn-flat" onclick="changePassword()"> <i class="fa fa-lock"></i> Lưu</button>
+                        </div>
+                    </div>
+                </div>
+                @*  *@
+                <div class="success alert alert-success" style="display:none">
+                </div>
+                <!-- <div class="form-group has-feedback">
+                <label class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input class="btn btn-success btn-saveinfo" value="Lưu thông tin" />
+                </div> -->
+            </div>
+        </div>
+    </section>
+</div>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 2.1.1
+    </div>
+    <strong>Copyright &copy; 2016 <a href="http://www.vietstarexpress.com" target="_blank" rel="nofollow">VIETSTAR Post & Cargo</a>.</strong> All rights
+    reserved.
+</footer>
+<script src="~/ScriptSys/CustomerCurrentInfo.js"></script>
+<script src="~/ScriptSys/Info.js"></script>

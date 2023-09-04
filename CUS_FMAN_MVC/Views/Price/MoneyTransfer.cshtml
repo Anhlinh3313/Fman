@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "Phiên thanh toán COD";
+    ViewBag.TransferActive = "active";
+}
+
+<div class="content-wrapper scroller" id="style-10">
+    <section class="content-header">
+        <h1>
+            Phiên thanh toán COD
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("DashBroad", "DashBroad")"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Phiên thanh toán COD</li>
+        </ol>
+    </section>
+    <section class="content listBkCOD">
+        <div class="st-form">
+            <form role="form">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <div class="inputField">
+                            <div class="input-group date" data-provide="datepicker" data-date-format="mm-dd-yyyy">
+                                <input type="text" class="inputText search-from-date" readonly>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                                </span>
+                                <span class="label">Từ ngày</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="inputField">
+                            <div class="input-group date" data-provide="datepicker" data-date-format="mm-dd-yyyy">
+                                <input type="text" class="inputText search-to-date" readonly>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                                </span>
+                                <span class="label">Đến ngày</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 padding-top-15">
+                        <input type="button" value="Tìm kiếm" class="btn btn-success btn-search" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ctl-show-data">
+                <table class="table table-striped table-bordered table-hover" id="listBk">
+                    <thead>
+                        <tr>
+                            <th class="stt">#</th>
+                            <th class="stt">STT</th>
+                            <th class="code">Mã bảng kê</th>
+                            @*<th class="totalcod">Tổng COD</th>*@
+                            @*<th class="up">Điều chỉnh tăng</th>
+                                <th class="down">Điều chỉnh giảm</th>*@
+                            <th class="totalpay">Tổng thanh toán</th>
+                            <th class="create">Ngày tạo</th>
+                            <th class="create_by">Nhân viên tạo tạo</th>
+                            <th class="status">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    @*<tfoot>
+                            <tr>
+                                <th colspan="3" style="text-align:right"></th>
+                                <th class="number"></th>
+                                <th class="number"></th>
+                                <th class="number"></th>
+                                <th class="number"></th>
+                                <th colspan="7"></th>
+                            </tr>
+                        </tfoot>*@
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="modal fade list-lading" tabindex="-1" role="dialog" id="modal-lading">
+    <div class="modal-dialog" style="width:1024px; min-height:600px !important" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="box  listproterler">
+                    <div class="extend-head st-bg-6">
+                        <div class="extend-title">Chi tiết bảng kê thanh toán COD - <span id="codeCOD"></span></div>
+                    </div>
+                    <div class="modal-body row" style="background: #ffffffb5;">
+                        @*<div class="col-md-3 col-sm-12">
+                            <div class="inputField">
+                                <label>Mã giao dịch : <span id="magiaodich"></span></label>
+                            </div>
+                        </div>*@
+                        <div class="col-md-4 col-sm-12">
+                            <div class="inputField">
+                                <label>Ngày giao dịch : <span id="ngaygiaodich"></span></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <div class="inputField">
+                                <label>Tổng tiền : <span id="tongtien"></span></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <div class="inputField">
+                                <label>Số đơn : <span id="sodon"></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extend-body row">
+                        <div class="TableLading ctl-show-data">
+                            <table class="table table-striped table-bordered table-hover report-lading" id="report-lading">
+                                <thead>
+                                    <tr>
+                                        <th class="stt">STT</th>
+                                        <th class="code">Mã VĐ</th>
+                                        <th class="customercode">Mã KH</th>
+                                        <th class="sender">Tên khách Hàng</th>
+                                        <th class="createddate">Ngày Tạo</th>
+                                        <th class="addressto">Địa chỉ nhận</th>
+                                        <th class="phoneto">Điện thoại nhận</th>
+                                        <th class="priceother">Dịch Vụ</th>
+                                        <th class="Weight">Trọng Lượng</th>
+                                        <th class="amout">Cước Phí</th>
+                                        <th class="cod">COD</th>
+                                        <th class="status">Trạng Thái</th>
+                                        <th class="TypePayName">Hình thức thanh toán</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="8" style="text-align:right">Tổng:</th>
+                                        <th class="number"></th>
+                                        <th class="number"></th>
+                                        <th class="number"></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-excel-detail">Xuất excel</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+            </div>
+        </div>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="/ScriptSys/PriceSearchScript.js"></script>

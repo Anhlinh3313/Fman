@@ -1,0 +1,15 @@
+C:\sourceCode\CUS_FMAN_MVC\bin\ApplicationInsights.config
+C:\sourceCode\CUS_FMAN_MVC\bin\NetCo_CustomerSite.dll.config
+C:\sourceCode\CUS_FMAN_MVC\bin\NetCo_CustomerSite.dll
+C:\sourceCode\CUS_FMAN_MVC\bin\NetCo_CustomerSite.pdb
+C:\sourceCode\CUS_FMAN_MVC\bin\Newtonsoft.Json.dll
+C:\sourceCode\CUS_FMAN_MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\sourceCode\CUS_FMAN_MVC\obj\Debug\PCSWebAPP.csprojAssemblyReference.cache
+C:\sourceCode\CUS_FMAN_MVC\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+C:\sourceCode\CUS_FMAN_MVC\obj\Debug\PCSWebAPP.csproj.CopyComplete
+C:\sourceCode\CUS_FMAN_MVC\obj\Debug\NetCo_CustomerSite.dll
+C:\sourceCode\CUS_FMAN_MVC\obj\Debug\NetCo_CustomerSite.pdb
+D:\angular\Fman\CUS_FMAN_MVC\obj\Debug\PCSWebAPP.csprojAssemblyReference.cache
+D:\angular\Fman\CUS_FMAN_MVC\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+D:\angular\Fman\CUS_FMAN_MVC\obj\Debug\NetCo_CustomerSite.dll
+D:\angular\Fman\CUS_FMAN_MVC\obj\Debug\NetCo_CustomerSite.pdb

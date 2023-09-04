@@ -1,0 +1,121 @@
+﻿@{ ViewBag.Title = "Tạo đơn hàng bằng Excel"; ViewBag.ImportActive = "active"; }
+
+<link href="~/Content/plugins/upload-excel/css/infragistics.theme.css" rel="stylesheet" />
+<link href="~/Content/plugins/upload-excel/css/infragistics.css" rel="stylesheet" />
+<link href="~/Content/plugins/upload-excel/css/styleExcel.css" rel="stylesheet" />
+<link href="~/Content/plugins/upload-excel/css/styleExcel.css" rel="stylesheet" />
+<link href="~/Content/css/confirmDialog.css" rel="stylesheet" />
+<div class="content-wrapper scroller" id="style-10">
+    <style>
+        #myProgress {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        #myBar {
+            width: 5%;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        .ui-iggrid-scrolldiv tbody {
+            font-size: 13px;
+        }
+
+        table.data-excel > tbody > tr > td.not_get {
+            font-style: initial !important;
+        }
+        /*tbody > tr:first-child {
+            font-style: italic;
+        }*/
+        tbody > tr {
+            font-style: italic;
+        }
+    </style>
+    <section class="content-header">
+        <h1>
+            Tạo đơn hàng bằng Excel
+        </h1>
+        @*
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action(" Index ", "Home ")"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="@Url.Action(" Index ", "Lading ")">Quản lý đơn hàng</a></li>
+                <li class="active">Import đơn hàng</li>
+            </ol>*@
+    </section>
+    @*
+        <section class="content-progress">
+            <div id="myProgress">
+                <div id="myBar">0%</div>
+            </div>
+            <br>
+            <button onclick="move()">Click Me</button>
+        </section>*@
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger message_error" style="display:none">
+                </div>
+                <div class="message_success alert alert-success" style="display:none">
+                    Upload danh sách đơn hàng thành công!
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group address">
+                        <select class="form-control select-choice address-select" data-placeholder="Chọn địa chỉ">
+                            <option value="">Chọn địa chỉ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-1" style="padding-left: 0;padding-right: 5px;">
+                    <span class="btn btn-warning btn-social btn-file margin-bottom-15" style="width: 100%;">
+                        <i class="fa fa-file-excel-o"></i> Import excel <input id="upload_excel" type="file" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                    </span>
+                </div>
+                <div class="col-md-1" style="padding-left: 0;padding-right: 5px;">
+                    <a href="#" class="btn btn-info btn_save margin-bottom-15" style="width: 100%;">
+                        <i class="fa fa-plus"></i> Tạo vận đơn
+                    </a>
+                </div>
+                <div class="col-md-1" style="padding-left: 0;">
+                    <a href="#" class="btn btn-danger btn_clear margin-bottom-15" style="width: 100%;">
+                        <i class="fa fa-times"></i> Hủy
+                    </a>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-1" style="padding-left: 0;">
+                    <a download href="~/Content/plugins/upload-excel/FileExampleUploadBill.xlsx" class="btn btn-info btn-file margin-bottom-15">
+                        <i class="fa fa-download"></i> Tải file mẫu
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div id="result"></div>
+                <table id="grid-excel" class="data-excel"></table>
+            </div>
+        </div>
+    </section>
+    <div class="form-edit-cell">
+        <input type="text" id="google_address" class="edit-text" placeholder="" tabindex="1" />
+        <input type="button" class="edit-cancel" value="CANCEL" tabindex="2" />
+        <input type="button" class="edit-save" value="OK" tabindex="1" />
+    </div>
+    <div class="edit-triangle"></div>
+</div>
+<script src="~/Content/plugins/upload-excel/js/jquery-ui.min.js"></script>
+<script src="~/Content/plugins/upload-excel/js/modernizr.min.js"></script>
+<script src="~/Content/plugins/upload-excel/js/infragistics.core.js"></script>
+<script src="~/Content/plugins/upload-excel/js/infragistics.lob.js"></script>
+<script src="~/Content/plugins/upload-excel/js/infragistics.documents.core.js"></script>
+<script src="~/Content/plugins/upload-excel/js/infragistics.excel.js"></script>
+<script src="~/Content/plugins/upload-excel/js/jsExcel.js"></script>
+<script src="~/Content/plugins/upload-excel/js/EditTable.js"></script>
+<script src="~/ScriptSys/ImportLadingExcelScript.js"></script>
+<script src="~/Tool_JS/js/confirmDialog.jquery.min.js"></script>

@@ -1,0 +1,734 @@
+﻿@{ ViewBag.Title = "Tạo đơn hàng"; Layout = "~/Views/Shared/_Layout.cshtml"; ViewBag.CreateActive = "active"; }
+<style>
+    .st-form .row {
+        margin-bottom: 5px;
+    }
+
+    .st-form .multiselect-container {
+        padding-left: 30px;
+    }
+
+    .dataTables_wrapper {
+        padding: 5px;
+    }
+
+    div > label {
+        line-height: 30px;
+        height: 30px;
+    }
+
+    .extend-title {
+        padding: 5px 5px 5px 0px;
+    }
+
+    .box-padding {
+        padding-right: 0px;
+    }
+
+    .box-padding-number {
+        padding: 0px;
+    }
+
+    .easy-autocomplete-container {
+        top: 30px;
+        z-index: 10000 !important;
+    }
+
+    .form-control-feedback.fa {
+        line-height: 28px !important;
+        z-index: 1000;
+    }
+
+    .form-control-feedback {
+        pointer-events: initial;
+    }
+
+    .ladingModel {
+        z-index: 1000 !important;
+    }
+    .alert {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .address-google-pac-container {
+        width: 100%;
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        display: block;
+        z-index: 10000;
+        background: #fff;
+        border: 1px solid #a5a5a5;
+    }
+    .address-google-pac-item {
+        padding: 0 5px;
+        margin: 5px 0 5px 0;
+    }
+    .address-hr {
+        margin: 0;
+    }
+    .spinner-grow {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        vertical-align: text-bottom;
+        background-color: currentColor;
+        opacity: 0;
+        border-radius: 50%;
+        animation: spinner-grow .75s linear infinite;
+    }
+    .address-google-pac-container-loading {
+        position: absolute;
+        top: 6px;
+        z-index: 10;
+        right: 5px;
+    }
+</style>
+<link href="~/Content/plugins/jquery-validation/validationEngine.jquery.css" rel="stylesheet" />
+
+<div class="content-wrapper scroller" id="style-10">
+    <div class="col-md-12">
+        <section class="content-header">
+            <h1>
+                Tạo đơn hàng
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("DashBroad", "DashBroad")"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Tạo đơn hàng</li>
+            </ol>
+        </section>
+        <div class="st-form ladings">
+            <form id="ladingFrom" action="#">
+                <div class="col-md-12 no-padding">
+                    <div class="success alert alert-success" style="display:none">
+                    </div>
+                    <div class="alert alert-danger error" style="display:none">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row" id="ladinginfo">
+                        <div class="lading-template " style="display:none">
+                            <div class="extend-container col-md-12" style="box-shadow: rgba(109, 109, 109, 0.43) 0px 2px 3px;padding: 0px;">
+                                <div class="extend-head st-bg-2">
+                                    <span class="extend-title">
+                                        Đơn hàng
+                                    </span>
+                                </div>
+                                <div class="col-md-6" style="border-right: 1px solid #dad7d7;">
+                                    <div class="extend-head col-md-12 no-padding">
+                                        <div class="extend-title">
+                                            THÔNG TIN NGƯỜI NHẬN HÀNG
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-3 padding-left-0">
+                                                <label>Số điện thoại<span style="color: red">(*)</span>:</label>
+                                            </div>
+                                            <div class="col-md-9 padding-right-0">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control receiver-name validate[required]" placeholder="Nhập SĐT người nhận hàng" data-placement="right" list="my-receiver-phone">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-3 padding-left-0">
+                                                <label>Tên khách hàng<span style="color: red">(*)</span>:</label>
+                                            </div>
+                                            <div class="col-md-9 padding-right-0">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control receiver-name validate[required]" placeholder="Tên khách hàng">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-3 padding-left-0">
+                                                <label>Địa chỉ<span style="color: red">(*)</span>:</label>
+                                            </div>
+                                            <div class="col-md-9 padding-right-0">
+                                                <div class="form-group">
+                                                    <div class="input-group input-address">
+                                                        <input type="text" class="form-control receiver-address validate[required]" placeholder="Địa chỉ nhận hàng theo google maps">
+                                                        <input type="text" id="address-place_id" class="form-control address-place_id" style="display:none">
+                                                        <input type="text" id="address-description" class="form-control address-description" style="display:none">
+                                                        <div class="address-google-pac-container pac-container pac-logo">
+                                                            <div class="address-google-pac-item pac-item">
+                                                                <span class="pac-icon pac-icon-marker"></span>
+                                                                <span class="pac-item-query">
+                                                                </span>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div class="address-google-pac-container-loading">
+                                                            <div class="spinner-grow text-primary" role="status">
+                                                                <span class="sr-only">Loading...</span>
+                                                            </div>
+                                                            <div class="spinner-grow text-primary" role="status">
+                                                                <span class="sr-only">Loading...</span>
+                                                            </div>
+                                                            <div class="spinner-grow text-primary" role="status">
+                                                                <span class="sr-only">Loading...</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="localtion-display col-md-12 no-padding">
+                                            <div class="col-md-12 no-padding">
+                                                <div class="col-md-3 padding-left-0">
+                                                    <label>Tỉnh thành<span style="color: red">(*)</span>:</label>
+                                                </div>
+                                                <div class="col-md-9 padding-right-0">
+                                                    <div class="form-group">
+                                                        <select name="province" class="form-control select-choice chosen-select province" data-placeholder="Chọn tỉnh thành" placeholder="Vui lòng chọn Tỉnh/Thành">
+                                                            <option value="">Chọn tỉnh thành</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding">
+                                                <div class="col-md-3 padding-left-0">
+                                                    <label>Quận huyện<span style="color: red">(*)</span>:</label>
+                                                </div>
+                                                <div class="col-md-9 padding-right-0">
+                                                    <div class="form-group">
+                                                        <select name="district" class="form-control select-choice chosen-select district" data-placeholder="Chọn quận huyện" placeholder="Vui lòng chọn Quận/Huyện">
+                                                            <option value="">Chọn quận huyện</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding">
+                                                <div class="col-md-3 padding-left-0">
+                                                    <label>Phường xã<span style="color: red">(*)</span>:</label>
+                                                </div>
+                                                <div class="col-md-9 padding-right-0">
+                                                    <div class="form-group">
+                                                        <select name="ward" class="form-control select-choice chosen-select ward" data-placeholder="Chọn phường xã" placeholder="Vui lòng chọn Phường/Xã">
+                                                            <option value="">Chọn phường xã</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-3 padding-left-0">
+                                                <label>Địa chỉ chi tiết:</label>
+                                            </div>
+                                            <div class="col-md-9 padding-right-0">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control receiver-address-note" placeholder="Địa chỉ chi tiết Khu/Khối, Lô/Block">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="extend-head col-md-12 no-padding">
+                                        <div class="extend-title">
+                                            THÔNG TIN LẤY HÀNG
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 no-padding">
+                                        <div id="sender" data-district-id="" data-city-id="">
+                                            <div class="col-md-12 no-padding" hidden>
+                                                <div class="col-md-3 padding-left-0">
+                                                    <label>Số điện thoại <span style="color: red">(*)</span>:</label>
+                                                </div>
+                                                <div class="col-md-9 padding-right-0">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" placeholder="SĐT người liên hệ nhận hàng" class="form-control sender-phone validate[required]">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding" hidden>
+                                                <div class="col-md-3 padding-left-0">
+                                                    <label>Tên người gửi <span style="color: red">(*)</span>:</label>
+                                                </div>
+                                                <div class="col-md-9 padding-right-0">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" placeholder="Tên người liên hệ nhận hàng" class="form-control sender-name validate[required]">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding" hidden>
+                                                <div class="col-md-3 padding-left-0">
+                                                    <label>Tên công ty:</label>
+                                                </div>
+                                                <div class="col-md-9 padding-right-0">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" placeholder="Tên người liên hệ nhận hàng" class="form-control sender-company validate[required]">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding" hidden>
+                                                <div class="col-md-3 padding-left-0">
+                                                    <label>Địa chỉ người gửi <span style="color: red">(*)</span>:</label>
+                                                </div>
+                                                <div class="col-md-9 padding-right-0">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" placeholder="Địa chỉ nhận hàng" class="form-control sender-address validate[required]" id="sender-address">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding">
+                                                <div class="col-md-3 padding-left-0">
+                                                    <label>Địa chỉ<span style="color: red">(*)</span>:</label>
+                                                </div>
+                                                <div class="col-md-8 padding-right-0">
+                                                    <div class="form-group">
+                                                        <select class="form-control select-choice sender-address-select" data-placeholder="Chọn địa chỉ">
+                                                            <option value="">Chọn địa chỉ</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1 padding-right-0">
+                                                    <div class="form-group">
+                                                        <a href="/thong-tin-ca-nhan.html" title="Thêm địa chỉ lấy hàng">
+                                                            <i style="right: 0;top: 5px;display: flex;position: absolute;font-size: 20px;" class="fa fa-plus-circle" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="extend-head col-md-12 no-padding">
+                                        <div class="extend-title">
+                                            THÔNG TIN HÀNG HÓA
+                                            <div class="col-md-3 pull-right no-padding">
+                                                <input type="text" style="height:20px !important" placeholder="Mã tham chiếu" class="form-control shop-code">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-12 no-padding">
+                                            <div class="order" id="order-0-0" style="margin: 0px 0 10px 0; overflow: hidden">
+                                                <div class="col-md-12 no-padding" style="border: 1px solid #aaa;">
+                                                    <div class="col-md-12 row-field no-padding" style="margin-left: 0;border-bottom: 1px solid #ccc;padding: 0;">
+                                                        <div class="order-index col-md-1" style="padding: 5px;">
+                                                            <b class="index-number">1.</b>
+                                                        </div>
+                                                        <div class="product-name col-md-11 no-padding">
+                                                            <div class="form-group" style="margin-bottom:0">
+                                                                <div class="input-group">
+                                                                    <textarea rows="2" class="form-control description validate[required]" style="border: none;box-shadow: none;height:auto !important" placeholder="Nội dung hàng hóa"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="weight-text row-field col-md-12" style="margin-left: 0px; padding: 0px; display: block;border-bottom: 1px solid #ccc;">
+                                                        <div class="col-md-1 box-padding" style="padding: 5px;">
+                                                            <b>Dài:</b>
+                                                        </div>
+                                                        <div class="col-md-1 box-padding-number" style="border-right: 1px solid #ccc;">
+                                                            <div class="form-group" style="margin-bottom:0">
+                                                                <div class="input-group">
+                                                                    <input type="number" class="form-control length-box" style="border: none;box-shadow: none;" placeholder="cm">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1 box-padding" style="padding: 5px;">
+                                                            <b>Rộng:</b>
+                                                        </div>
+                                                        <div class="col-md-1 box-padding-number" style="border-right: 1px solid #ccc;">
+                                                            <div class="form-group" style="margin-bottom:0">
+                                                                <div class="input-group">
+                                                                    <input type="number" class="form-control width-box" style="border: none;box-shadow: none;" placeholder="cm">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1 box-padding" style="padding: 5px;">
+                                                            <b>Cao:</b>
+                                                        </div>
+                                                        <div class="col-md-1 box-padding-number" style="border-right: 1px solid #ccc;">
+                                                            <div class="form-group" style="margin-bottom:0">
+                                                                <div class="input-group">
+                                                                    <input type="number" class="form-control height-box" style="border: none;box-shadow: none;" placeholder="cm">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1" style="padding: 5px;">
+                                                            <b>SL:</b>
+                                                            <a class="box-modal box-event" data-toggle="modal" href="#loadmodalBox">Nhập SK</a>
+                                                        </div>
+                                                        <div class="col-md-1 box-padding-number"  style="border-right: 1px solid #ccc;">
+                                                            <div class="form-group" style="margin-bottom:0">
+                                                                <div class="input-group">
+                                                                    <input type="number" class="form-control total-box" style="border: none;box-shadow: none;background-color: rgb(255, 255, 255);" value="1" placeholder="SL" disabled>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1" style="padding: 5px;">
+                                                            <b>KL:</b>
+                                                        </div>
+                                                        <div class="col-md-1 box-padding-number" style="border-right: 1px solid #ccc;">
+                                                            <div class="form-group" style="margin-bottom:0">
+                                                                <div class="input-group">
+                                                                    <input type="number" class="form-control weight validate[required, min[0.00001]]" value="0.5" style="border: none;box-shadow: none;" placeholder="kg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1" style="padding: 5px;">
+                                                            <b>TLQĐ:</b>
+                                                        </div>
+                                                        <div class="col-md-1 box-padding-number" style="border-right: 1px solid #ccc;">
+                                                            <div class="form-group" style="margin-bottom:0">
+                                                                <div class="input-group">
+                                                                    <input type="number" class="form-control exc-weight" style="border: none;box-shadow: none;background-color: rgb(255, 255, 255);" placeholder="kg" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-2 padding-left-0">
+                                                <label>Dịch vụ <span style="color: red">(*)</span>:</label>
+                                            </div>
+                                            <div class="col-md-4 padding-right-0">
+                                                <div class="form-group">
+                                                    <select class="form-control select-choice service" data-placeholder="Chọn dịch vụ">
+                                                        <option value="">Chọn dịch vụ</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 padding-right-0">
+                                                <label>Bưu gửi:</label>
+                                            </div>
+                                            <div class="col-md-4 padding-right-0">
+                                                <div class="form-group">
+                                                    <select class="form-control select-choice structure" data-placeholder="Chọn loại hàng hóa">
+                                                        <option value="">Chọn loại hàng hóa</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-6 cod-div no-padding">
+                                            <div class="col-md-4 padding-left-0">
+                                                <label>Thu hộ:</label>
+                                            </div>
+                                            <div class="col-md-8 padding-right-0">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Thu hộ (COD)" class="form-control cod validate[min[0.00001]]">
+                                                    <input type="hidden" placeholder="0" class="form-control cod-price" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 insured-div padding-right-0">
+                                            <div class="col-md-4 padding-left-0">
+                                                <label>Khai giá:</label>
+                                            </div>
+                                            <div class="col-md-8" style="padding: 0px 0px 0px 4px;">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Giá trị HH" class="form-control insured">
+                                                    <input type="hidden" placeholder="0" class="form-control insured-price" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-2 padding-left-0">
+                                                <label>DVGT:</label>
+                                            </div>
+                                            <div class="col-md-4 padding-right-0">
+                                                <div class="form-group">
+                                                    <select class="btn btn-default servicedvgt" data-placeholder="Chọn DVGT" multiple="multiple" data-label="left" itemprop="2" itemscope="2" data-select-all="true" data-width="100%" data-filter="true" data-action-onchange="true"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Phí:</label>
+                                            </div>
+                                            <div class="col-md-4 padding-right-0">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="0" style="z-index:1" class="form-control amount" readonly>
+                                                    <input type="hidden" placeholder="0" class="form-control dim" readonly>
+                                                    <input type="hidden" placeholder="0" class="form-control price-main" readonly>
+                                                    <input type="hidden" placeholder="0" class="form-control ppxd-price" readonly>
+                                                    <input type="hidden" placeholder="0" class="form-control price-far" readonly>
+                                                    <input type="hidden" placeholder="0" class="form-control other-price" readonly>
+                                                    <input type="hidden" placeholder="0" class="form-control vat" readonly>
+                                                    <input type="hidden" placeholder="0" class="form-control dvgt-price" readonly>
+                                                    <input type="hidden" placeholder="0" class="form-control default-priceP" readonly>
+                                                    <input type="hidden" placeholder="0" class="form-control default-priceS" readonly>
+                                                    <span class="fa fa-exclamation-circle form-control-feedback info-price-list" style="color:#004cff;cursor:pointer"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-2 padding-left-0">
+                                            </div>
+                                            <div class="col-md-4 padding-right-0">
+                                            </div>
+                                            <div class="col-md-2 padding-right-0">
+                                                <label>Trả phí <span style="color: red">(*)</span>:</label>
+                                            </div>
+                                            <div class="col-md-4 padding-right-0">
+                                                <div class="form-group">
+                                                    <select class="form-control select-choice payment validate[required]" data-placeholder="Chọn Thanh toán">
+                                                        <option value="">Thanh toán</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 no-padding">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <textarea rows="4" class="form-control noted" style="height:auto !important" placeholder="Ghi chú của khách hàng"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lading-list">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 no-padding">
+                    <div class="alert alert-danger error" style="display:none">
+                    </div>
+                    <div class="success alert alert-success" style="display:none">
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button class="add-more btn btn-default display-none" style="margin-right:10px" id="add-more">Thêm</button>
+                    <button class="add-lading btn btn-info" type="button" style="margin-right:10px" id="add-lading"> Tạo và duyệt gửi hàng</button>
+                    <button class="clear-lading btn btn-default" type="button" style="margin-right:10px;" id="clear-lading">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<a class="btn btn-default btn-info-price-list display-none" data-toggle="modal" href="#modalInfoPriceList">Show hang</a>
+
+<div class="ladingModel modal fade bs-example-modal-md ladings ladingInfoPriceList" id="modalInfoPriceList" tabindex="-1" role="basic" aria-hidden="true">
+        <div class="modal-dialog modal-wide modal-md st-form report-revenue message-bb">
+            <div class="modal-content scroller" id="style-3">
+                <div class="modal-header">
+                    <button type="button" style="color:#f39c28" class="close close-accept-return" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Chi tiết cước phí</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div id="return" class="row">
+                            <div class="extend-container col-md-12">
+                                <div class="extend-head st-bg-2">
+                                    <span class="extend-title">Thông tin cước phí</span>
+                                </div>
+                                <div class="extend-body col-md-12">
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-6">
+                                            <label>
+                                                Dịch vụ:
+                                                <span class="control-label info-price-service"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>
+                                                Cước chính:
+                                                <span class="control-label info-price-defaultPrice">0</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-6">
+                                            <label>
+                                                Cước VSVX:
+                                                <span class="control-label info-price-remoteAreasPrice">0</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>
+                                                PPXD:
+                                                <span class="control-label info-price-fuelPrice">0</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-6">
+                                            <label>
+                                                Dịch vụ GT:
+                                                <span class="control-label info-price-shipmentDVGT"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>
+                                                Cước DVGT:
+                                                <span class="control-label info-price-totalDVGT">0</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 no-padding">
+                                        <div class="col-md-6">
+                                            <label>
+                                                Cước thu hộ:
+                                                <span class="control-label info-price-codPrice">0</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>
+                                                Tổng cước:
+                                                <span class="control-label info-price-totalPrice">0</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- Javascript -->
+
+<div class="ladingModel modal fade bs-example-modal-lg ladings ladingedit" id="loadmodalBox" tabindex="-1" role="basic" aria-hidden="true">
+    <div class="modal-dialog modal-wide modal-md st-form report-revenue message-bb">
+        <div class="modal-content scroller" id="style-3">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" style="text-indent:0" aria-hidden="true">x</button>
+                <h4 class="modal-title">Nhập kích thức</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="col-md-3 padding-left-0">
+                        <div class="form-group">
+                            <label><i class="fa fa-dropbox"></i> Dài:</label>
+                            <div class="input-group">
+                                <input type="text" placeholder="Dài (cm)" class="form-control box-length">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 padding-left-0" ">
+                        <div class="form-group">
+                            <label><i class="fa fa-dropbox"></i> Rộng:</label>
+                            <div class="input-group">
+                                <input type="text" placeholder="Rộng (cm)" class="form-control box-width">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 padding-left-0" ">
+                        <div class="form-group">
+                            <label><i class="fa fa-dropbox"></i> Cao:</label>
+                            <div class="input-group">
+                                <input type="text" placeholder="Cao (cm)" class="form-control box-height">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 padding-left-0" ">
+                        <div class="form-group">
+                            <label><i class="fa fa-dropbox"></i> TL (kg):</label>
+                            <div class="input-group">
+                                <input type="text" placeholder="TL (kg)" class="form-control box-weight">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-12 no-padding text-center">
+                        <button class="btn btn-info" type="button" id="add-box">Tạo kiện</button>
+                    </div>
+                </div>
+                <div class="col-md-12" style="margin-top:15px;">
+                    <div class="col-md-12 no-padding">
+                        <div class="box  listproterler" style="border: 0px;">
+                            <div class="extend-body row" style="background: #f2f2f2;padding:0;">
+                                <div class="TableSearch">
+                                    <table class="table table-condensed table-bordered table-hover" id="box-data">
+                                        <thead>
+                                            <tr>
+                                                <th class="stt" style="width: 50px">#</th>
+                                                <th class="length">Dài</th>
+                                                <th class="width">Rộng</th>
+                                                <th class="height">Cao</th>
+                                                <th class="weightCurrent">TL Thực</th>
+                                                <th class="ExcWeight">TL Quy đổi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Tổng TL:</th>
+                                                <th><span class="total-weight"></span></th>
+                                                <th>Tổng TLTG: </th>
+                                                <th><span class="total-calweight"></span></th>
+                                                <th>Tổng TLQĐ:</th>
+                                                <th><span class="total-excWeight"></span></th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 no-padding">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default bt-close-loadmodal" data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+            <div style="display:none">
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="~/Content/plugins/jquery-validation/jquery.validationEngine.js"></script>
+<script src="~/Content/plugins/jquery-validation/jquery.validationEngine.Custom.js"></script>
+<script src="~/Content/plugins/jquery-validation/jquery.validationEngine-vi.js"></script>
+<!-- JS file -->
+<script src="~/Content/custom/jquery.easy-autocomplete.min.js"></script>
+<!-- CSS file -->
+<link href="~/Content/custom/easy-autocomplete.min.css" rel="stylesheet" />
+<!-- Additional CSS Themes file - not required-->
+<link href="~/Content/custom/easy-autocomplete.themes.min.css" rel="stylesheet" />
+<!-- JS AddLadingsScript -->
+<script src="/ScriptSys/AddLadingsScript.js"></script>
+<script>
+    $(function () {
+        $(".form-control").tooltip({
+            show: {
+                effect: "slideDown",
+                delay: 250
+            }
+        });
+    });
+    $('#add-lading').on('click', function () {
+        $("#add-lading").attr("disabled", "disabled");
+        setTimeout(function () {
+            $("#add-lading").prop("disabled", false);
+        }, 500)
+    })
+</script>

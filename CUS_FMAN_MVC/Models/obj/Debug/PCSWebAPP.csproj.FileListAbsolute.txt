@@ -1,0 +1,393 @@
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\ApplicationInsights.config
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\csc.exe
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\System.Collections.Immutable.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\System.Reflection.Metadata.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\vbc.exe
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\VBCSCompiler.exe
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\roslyn\VBCSCompiler.exe.config
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\NetCo_CustomerSite.dll.config
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\NetCo_CustomerSite.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\NetCo_CustomerSite.pdb
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Antlr3.Runtime.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\EntityFramework.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\EntityFramework.SqlServer.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.Agent.Intercept.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.DependencyCollector.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.Web.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.WindowsServer.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.ApplicationInsights.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.Facebook.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.Google.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.Twitter.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Web.Infrastructure.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Newtonsoft.Json.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Owin.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.Helpers.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.Mvc.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.Optimization.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.Razor.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.WebPages.Deployment.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.WebPages.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.WebPages.Razor.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\WebGrease.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.DependencyCollector.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.Web.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AI.WindowsServer.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.ApplicationInsights.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.Helpers.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.Mvc.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.Optimization.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.Razor.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.WebPages.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.WebPages.Deployment.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\System.Web.WebPages.Razor.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Antlr3.Runtime.pdb
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Newtonsoft.Json.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\EntityFramework.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\EntityFramework.SqlServer.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.Facebook.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.Google.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.Twitter.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\obj\Debug\NetCo_CustomerSite.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\NetCo_CustomerSite\obj\Debug\NetCo_CustomerSite.pdb
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\obj\Debug\NetCo_CustomerSite.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\obj\Debug\NetCo_CustomerSite.pdb
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\ApplicationInsights.config
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\csc.exe
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\System.Collections.Immutable.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\System.Reflection.Metadata.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\vbc.exe
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\VBCSCompiler.exe
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\roslyn\VBCSCompiler.exe.config
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\NetCo_CustomerSite.dll.config
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\NetCo_CustomerSite.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\NetCo_CustomerSite.pdb
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Antlr3.Runtime.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\EntityFramework.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\EntityFramework.SqlServer.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.Agent.Intercept.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.DependencyCollector.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.Web.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.WindowsServer.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.ApplicationInsights.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AspNet.Identity.Core.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.Cookies.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.Facebook.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.Google.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.OAuth.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.Twitter.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Web.Infrastructure.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Newtonsoft.Json.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Owin.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.Helpers.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.Mvc.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.Optimization.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.Razor.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.WebPages.Deployment.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.WebPages.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.WebPages.Razor.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\WebGrease.dll
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.DependencyCollector.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.Web.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AI.WindowsServer.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.ApplicationInsights.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.Helpers.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.Mvc.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.Optimization.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.Razor.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.WebPages.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.WebPages.Deployment.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\System.Web.WebPages.Razor.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Antlr3.Runtime.pdb
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Newtonsoft.Json.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\EntityFramework.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\EntityFramework.SqlServer.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AspNet.Identity.Core.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.Facebook.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.Cookies.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.OAuth.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.Google.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.Twitter.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\VS\WEB\2017\PCS\CUS PCSPOST\PCSWebAPP\obj\Debug\PCSWebAPP.csprojResolveAssemblyReference.cache
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\ApplicationInsights.config
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\NetCo_CustomerSite.dll.config
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\NetCo_CustomerSite.dll
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\NetCo_CustomerSite.pdb
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Newtonsoft.Json.dll
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.AI.DependencyCollector.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.AI.Web.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.AI.WindowsServer.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.ApplicationInsights.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\System.Web.Helpers.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\System.Web.Mvc.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\System.Web.Optimization.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\System.Web.Razor.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\System.Web.WebPages.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\System.Web.WebPages.Deployment.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\System.Web.WebPages.Razor.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Antlr3.Runtime.pdb
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\EntityFramework.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\EntityFramework.SqlServer.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.AspNet.Identity.Core.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.Owin.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.Owin.Security.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.Owin.Security.Facebook.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.Owin.Security.Cookies.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.Owin.Security.OAuth.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.Owin.Security.Google.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.Owin.Security.Twitter.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\obj\Debug\PCSWebAPP.csprojResolveAssemblyReference.cache
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\obj\Debug\NetCo_CustomerSite.dll
+D:\VS\WEB\2017\PCS\CUSWeb_PCSNew\Source\obj\Debug\NetCo_CustomerSite.pdb
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\ApplicationInsights.config
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\NetCo_CustomerSite.dll.config
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\NetCo_CustomerSite.dll
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\NetCo_CustomerSite.pdb
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Newtonsoft.Json.dll
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.DependencyCollector.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.Web.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.WindowsServer.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.ApplicationInsights.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Helpers.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Mvc.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Optimization.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Razor.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.WebPages.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.WebPages.Deployment.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.WebPages.Razor.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Antlr3.Runtime.pdb
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\EntityFramework.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\EntityFramework.SqlServer.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AspNet.Identity.Core.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Facebook.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Cookies.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.OAuth.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Google.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Twitter.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\obj\Debug\PCSWebAPP.csprojResolveAssemblyReference.cache
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\obj\Debug\NetCo_CustomerSite.dll
+D:\VS\WEB\2018\Shipnhanh\ShipnhanhV5_CUS_ANGULAR\obj\Debug\NetCo_CustomerSite.pdb
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\ApplicationInsights.config
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\NetCo_CustomerSite.dll.config
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\NetCo_CustomerSite.dll
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\NetCo_CustomerSite.pdb
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Newtonsoft.Json.dll
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.DependencyCollector.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.Web.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.WindowsServer.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.ApplicationInsights.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Helpers.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Mvc.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Optimization.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Razor.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.WebPages.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.WebPages.Deployment.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.WebPages.Razor.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Antlr3.Runtime.pdb
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\EntityFramework.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\EntityFramework.SqlServer.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AspNet.Identity.Core.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Facebook.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Cookies.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.OAuth.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Google.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Twitter.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\obj\Debug\PCSWebAPP.csprojResolveAssemblyReference.cache
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\obj\Debug\NetCo_CustomerSite.dll
+E:\DSC\ShipnhanhV5_CUS_ANGULAR\obj\Debug\NetCo_CustomerSite.pdb
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\ApplicationInsights.config
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\NetCo_CustomerSite.dll.config
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\NetCo_CustomerSite.dll
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\NetCo_CustomerSite.pdb
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Newtonsoft.Json.dll
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.DependencyCollector.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.Web.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AI.WindowsServer.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.ApplicationInsights.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Helpers.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Mvc.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Optimization.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.Razor.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.WebPages.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.WebPages.Deployment.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\System.Web.WebPages.Razor.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Antlr3.Runtime.pdb
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\EntityFramework.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\EntityFramework.SqlServer.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Google.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\obj\Debug\PCSWebAPP.csprojResolveAssemblyReference.cache
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\obj\Debug\PCSWebAPP.csproj.CopyComplete
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\obj\Debug\NetCo_CustomerSite.dll
+E:\Lam\Angular\ShipnhanhV5_CUS_ANGULAR\obj\Debug\NetCo_CustomerSite.pdb
+E:\Lam\Customer.vetstar\bin\ApplicationInsights.config
+E:\Lam\Customer.vetstar\bin\NetCo_CustomerSite.dll.config
+E:\Lam\Customer.vetstar\bin\NetCo_CustomerSite.dll
+E:\Lam\Customer.vetstar\bin\NetCo_CustomerSite.pdb
+E:\Lam\Customer.vetstar\bin\Newtonsoft.Json.dll
+E:\Lam\Customer.vetstar\bin\Microsoft.AI.DependencyCollector.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.AI.Web.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.AI.WindowsServer.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.ApplicationInsights.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Lam\Customer.vetstar\bin\System.Web.Helpers.xml
+E:\Lam\Customer.vetstar\bin\System.Web.Mvc.xml
+E:\Lam\Customer.vetstar\bin\System.Web.Optimization.xml
+E:\Lam\Customer.vetstar\bin\System.Web.Razor.xml
+E:\Lam\Customer.vetstar\bin\System.Web.WebPages.xml
+E:\Lam\Customer.vetstar\bin\System.Web.WebPages.Deployment.xml
+E:\Lam\Customer.vetstar\bin\System.Web.WebPages.Razor.xml
+E:\Lam\Customer.vetstar\bin\Antlr3.Runtime.pdb
+E:\Lam\Customer.vetstar\bin\EntityFramework.xml
+E:\Lam\Customer.vetstar\bin\EntityFramework.SqlServer.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.Owin.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.Owin.Security.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.Owin.Security.Google.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Lam\Customer.vetstar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Lam\Customer.vetstar\obj\Debug\PCSWebAPP.csprojResolveAssemblyReference.cache
+E:\Lam\Customer.vetstar\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+E:\Lam\Customer.vetstar\obj\Debug\PCSWebAPP.csproj.CopyComplete
+E:\Lam\Customer.vetstar\obj\Debug\NetCo_CustomerSite.dll
+E:\Lam\Customer.vetstar\obj\Debug\NetCo_CustomerSite.pdb
+G:\DSC\VietStarExpress\bin\ApplicationInsights.config
+G:\DSC\VietStarExpress\bin\NetCo_CustomerSite.dll.config
+G:\DSC\VietStarExpress\bin\NetCo_CustomerSite.dll
+G:\DSC\VietStarExpress\bin\NetCo_CustomerSite.pdb
+G:\DSC\VietStarExpress\bin\Newtonsoft.Json.dll
+G:\DSC\VietStarExpress\obj\Debug\PCSWebAPP.csprojAssemblyReference.cache
+G:\DSC\VietStarExpress\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+G:\DSC\VietStarExpress\obj\Debug\PCSWebAPP.csproj.CopyComplete
+G:\DSC\VietStarExpress\obj\Debug\NetCo_CustomerSite.dll
+G:\DSC\VietStarExpress\obj\Debug\NetCo_CustomerSite.pdb
+E:\Lam\Angular\VietStarExpress\bin\ApplicationInsights.config
+E:\Lam\Angular\VietStarExpress\bin\NetCo_CustomerSite.dll.config
+E:\Lam\Angular\VietStarExpress\bin\NetCo_CustomerSite.dll
+E:\Lam\Angular\VietStarExpress\bin\NetCo_CustomerSite.pdb
+E:\Lam\Angular\VietStarExpress\bin\Newtonsoft.Json.dll
+E:\Lam\Angular\VietStarExpress\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+E:\Lam\Angular\VietStarExpress\obj\Debug\PCSWebAPP.csproj.CopyComplete
+E:\Lam\Angular\VietStarExpress\obj\Debug\NetCo_CustomerSite.dll
+E:\Lam\Angular\VietStarExpress\obj\Debug\NetCo_CustomerSite.pdb
+E:\Lam\Angular\VietStarExpress\obj\Debug\PCSWebAPP.csprojAssemblyReference.cache
+D:\Work\Angular\VietStarExpress\bin\ApplicationInsights.config
+D:\Work\Angular\VietStarExpress\bin\NetCo_CustomerSite.dll.config
+D:\Work\Angular\VietStarExpress\bin\NetCo_CustomerSite.dll
+D:\Work\Angular\VietStarExpress\bin\NetCo_CustomerSite.pdb
+D:\Work\Angular\VietStarExpress\bin\Newtonsoft.Json.dll
+D:\Work\Angular\VietStarExpress\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+D:\Work\Angular\VietStarExpress\obj\Debug\PCSWebAPP.csproj.CopyComplete
+D:\Work\Angular\VietStarExpress\obj\Debug\NetCo_CustomerSite.dll
+D:\Work\Angular\VietStarExpress\obj\Debug\NetCo_CustomerSite.pdb
+D:\Work\Angular\VietStarExpress\obj\Debug\PCSWebAPP.csprojAssemblyReference.cache
+E:\Work\Angular\VietStarExpress\bin\ApplicationInsights.config
+E:\Work\Angular\VietStarExpress\bin\NetCo_CustomerSite.dll.config
+E:\Work\Angular\VietStarExpress\bin\NetCo_CustomerSite.dll
+E:\Work\Angular\VietStarExpress\bin\NetCo_CustomerSite.pdb
+E:\Work\Angular\VietStarExpress\bin\Newtonsoft.Json.dll
+E:\Work\Angular\VietStarExpress\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Work\Angular\VietStarExpress\obj\Debug\PCSWebAPP.csprojAssemblyReference.cache
+E:\Work\Angular\VietStarExpress\obj\Debug\PCSWebAPP.csproj.CoreCompileInputs.cache
+E:\Work\Angular\VietStarExpress\obj\Debug\PCSWebAPP.csproj.CopyComplete
+E:\Work\Angular\VietStarExpress\obj\Debug\NetCo_CustomerSite.dll
+E:\Work\Angular\VietStarExpress\obj\Debug\NetCo_CustomerSite.pdb

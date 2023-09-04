@@ -1,0 +1,134 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vận chuyển cho thương mại điện tử | Log in - </title>
+    <link rel="icon" href="~/Content/img/favicon.ico" id="Favicon">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="/content/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/content/dist/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="/content/plugins/iCheck/square/blue.css">
+    <link href="/Content/css/custom.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!-- BEGIN BODY -->
+<body class="hold-transition login-page">
+    <style>
+        .display-none {
+            display: none !important;
+        }
+    </style>
+    <div class="login-box">
+        <div class="login-logo div-logo">
+            <a href="/"><img src="~/Content/img/tasetco.png" style="margin:0 auto" height="50" id="Logo-Company" class="img-responsive logo"></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">ĐĂNG KÝ THÀNH VIÊN</p>
+            <div>
+                <div class="form-group has-feedback">
+                    <input type="email" class="email form-control" name="Email" placeholder="Email đăng nhập">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="password form-control" name="PassWord" placeholder="Mật khẩu">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="confirmPassword form-control" name="ConfirmPassword" placeholder="Xác nhận mật khẩu">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" class="name form-control" name="CustomerName" placeholder="Họ và tên">
+                    <span class="fa fa-user-secret form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" class="phone form-control" name="Phone" placeholder="Điện thoại">
+                    <span class="fa fa-phone form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control address" id="address" name="Address" placeholder="Địa chỉ">
+                    <input type="hidden" class="form-control cityid" id="cityId" name="CityId">
+                    <input type="hidden" class="form-control districtid" id="districtId" name="DistrictId">
+                    <input type="hidden" class="form-control wardid" id="wardid" name="WardId">
+                    <input type="hidden" class="form-control lat" id="lat" name="Lat">
+                    <input type="hidden" class="form-control lng" id="lng" name="Lng">
+                    <span class="fa fa-map-pin form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="font-red-haze lblmessage display-none" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message">Dữ liệu không hợp lệ!</span></label>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="/dang-nhap.html" class="btn btn-warning"> <i class="fa fa-arrow-left"></i> Đăng nhập</a>
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn btn-success btn-block btn-flat btn-register"> <i class="fa fa-user"></i> Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+    <!-- jQuery 2.2.3 -->
+    <script src="/content/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="/content/bootstrap/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="/content/plugins/iCheck/icheck.min.js"></script>
+    <!--Custom-->
+    <script src="/Tool_JS/js/Enviroment.js"></script>
+    <script src="/Tool_JS/js/ToolFunction.js"></script>
+    @* Test *@
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkR-wl8rYwyb5XhvinbcfZOuFsRV2IFDo&sensor=false&amp;libraries=places"></script>
+
+    @* ================================= *@
+    <script src="~/ScriptSys/GetData/title.js"></script>
+    <script src="~/ScriptSys/GetData/GetData.js"></script>
+
+    @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfqPJqJnthPCSdgAs4pn1Gcc5RZrElg3U&sensor=false&amp;libraries=places"></script>*@
+    @*online*@
+    @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7OZUlHNaH3aUlUY4v7oVAyptjHxORdw0&sensor=false&amp;libraries=places"></script>*@
+    <script src="/ScriptSys/RegisterScript.js"></script>
+
+    <div id="loading" style="display:none">
+        <div class="lds-css" style="padding: 15px 90px;">
+            <div class="lds-gear" style="100%;height:100%">
+                <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <p>ĐANG XỬ LÝ, VUI LÒNG ĐỢI...</p>
+    </div>
+</body>
+<!-- END BODY -->
+</html>

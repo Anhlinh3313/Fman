@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "Xin chào";
+}
+<div class="content-wrapper scroller" id="style-10">
+    <section class="content">
+        <div class="box box-primary summary">
+            <div class="box-header with-border">
+                <i class="fa fa-bar-chart-o"></i>
+                <h3 class="box-title">Thống kê theo tháng</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="info-box bg-green">
+                        <span class="info-box-icon"><i class="fa fa-shopping-cart"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Tổng đơn hàng</span>
+                            <span class="info-box-number" id="tongdonhang">0</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 50%"></div>
+                            </div>
+                            <span class="progress-description">
+                                (Tháng hiện tại)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="info-box bg-aqua">
+                        <span class="info-box-icon"><i class="ion ion-bag"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Số tiền đã thu hộ</span>
+                            <span class="info-box-number" id="tongthanhtoan">0 VND</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 50%"></div>
+                            </div>
+                            <span class="progress-description">
+                                (Tháng hiện tại)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="info-box bg-red">
+                        <span class="info-box-icon"><i class="ion ion-bag"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Tổng doanh thu</span>
+                            <span class="info-box-number" id="tongdoanhthu">0 VND</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 50%"></div>
+                            </div>
+                            <span class="progress-description">
+                                (Tháng hiện tại)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box box-primary news">
+            <div class="box-header with-border">
+                <i class="fa fa-tags"></i>
+                <h3 class="box-title">Tin nổi bật</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="col-md-12">
+                    <ul class="timeline">
+                        <li>
+                            <i class="fa fa-star bg-yellow"></i>
+                            <div class="timeline-item">
+                                <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                                <h3 class="timeline-header">
+                                    <a href="#">Quy trình hoạt động</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    Nhằm nâng cao chất lượng dịch vụ cũng như tiết kiệm thời gian của khách hàng,
+                                    <br />tất cả các khâu trong quy trình làm việc <span class="companyNameJS">TASETCO</span> đều đầu tư chuyên sâu về công nghệ.
+                                </div>
+                                <div class="timeline-footer">
+                                    <a class="btn btn-info btn-xs Link-Website" rel="nofollow" target="_blank" title="Quy trình hoạt động" href="http://www.vietstarexpress.com">Chi tiết</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa fa-star bg-yellow"></i>
+                            <div class="timeline-item">
+                                <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                                <h3 class="timeline-header">
+                                    <a href="#">Hướng dẫn đóng gói</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    Quy trình cung cấp dịch vụ chuyển phát của <span class="companyNameJS">TASETCO</span> phụ thuộc Quy định về vận tải hàng không
+                                    <br />và cơ sở hạ tầng đường xá khi vận chuyển đường bộ.
+                                </div>
+                                <div class="timeline-footer">
+                                    <a class="btn btn-info btn-xs Link-Website" rel="nofollow" target="_blank" title="Hướng dẫn đóng gói" href="http://www.vietstarexpress.com">Chi tiết</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa fa-clock-o bg-gray"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="~/ScriptSys/HomeScript.js"></script>

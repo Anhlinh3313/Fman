@@ -1,0 +1,312 @@
+﻿@* @model NetCoSoft_DAL.Entity.Customer *@
+
+@{
+    /**/
+
+    ViewBag.Title = "Thông tin cá nhân";
+}
+<div class="content-wrapper scroller" >
+    <section class="content-header">
+        <h1>
+            Thông tin cá nhân
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("DashBroad", "DashBroad")"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Thông tin cá nhân</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-3">
+                <img class="profile-user-img img-responsive img-circle" src="/content/dist/img/user.png" alt="User profile picture">
+                <h3 class="profile-username text-center name"><label class="name"></label></h3>
+                <p class="text-muted text-center"><label class="nameEn"></label></p>
+            </div>
+            <div class="col-md-9 form-horizontal">
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Họ tên</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control name customer-name" name="CustomerName" placeholder="Họ và tên">
+                        <span class="fa fa-user-secret form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Số điện thoại</label>
+                    <div class="col-md-10">
+                        <input type="text" id="phone" class="form-control phone" name="Phone" placeholder="Điện thoại">
+                        <span class="fa fa-phone form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Địa chỉ e-mail</label>
+                    <div class="col-md-10">
+                        <input type="email" class="form-control email" name="Email" placeholder="Email" readonly>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Địa chỉ nhận hàng</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control address" name="Address" readonly placeholder="Địa chỉ nhận hàng">
+                        <span class="fa fa-map-pin form-control-feedback"></span>
+                        <div class="has-error">
+                            <label class="control-label" style="padding-top:0px">Thay đổi địa chỉ nhận hàng vui lòng liên hệ bộ phận chăm sóc khách hàng!</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Tên Công Ty(SHOP)</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control nameEn company" name="nameEn" placeholder="Công ty">
+                        <span class="fa fa-archive form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label title" style="font-weight:bold">
+                        Thông tin chuyển khoản:
+                    </label>
+                    <div class="col-md-10 pt-7">
+                        <button type="button" class="btn btn-primary unlock-btn-bank" style="padding: 0;line-height: 0;font-size: 11px;height: 20px;">Sửa thông tin chuyển khoản</button>
+                    </div>
+                </div>
+                <div class="bank-div">
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Chủ tài khoản ngân hàng</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control account-name" name="accountName" placeholder="Chủ tài khoản ngân hàng" disabled>
+                            <span class="fa fa-address-card-o form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Số tài khoản ngân hàng</label>
+                        <div class="col-md-10">
+                            <input type="text" id="account-bank" class="form-control account-bank" name="accountBank" placeholder="Số tài khoản ngân hàng" disabled>
+                            <span class="fa fa-university form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Ngân hàng</label>
+                        <div class="col-md-10">
+                            <select name="bank" class="form-control select-choice chosen-select bank" data-placeholder="Chọn ngân hàng" placeholder="Vui lòng chọn ngân hàng" disabled>
+                                <option value="">Chọn ngân hàng</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Chi nhánh ngân hàng</label>
+                        <div class="col-md-10">
+                            <select name="BranchId" class="form-control select-choice chosen-select branch" data-placeholder="Chọn chi nhánh ngân hàng" placeholder="Chọn chi nhánh ngân hàng" disabled>
+                                <option value="">Chọn chi nhánh ngân hàng</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group has-feedback lblmessage-update display-none">
+                    <label class="col-md-2 control-label"></label>
+                    <div class="col-md-6">
+                        <label class="font-red-haze" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message">Dữ liệu không hợp lệ!</span></label>
+                    </div>
+                </div>
+                <div class="form-group has-feedback" style="margin-bottom:30px">
+                    <label class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <button type="button" class="btn btn-primary btn-saveinfo">Lưu thông tin</button>
+                    </div>
+                </div>
+                @* Đổi mật khẩu *@
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label"> Đổi mật khẩu</label>
+                    <div class="col-md-10 pt-7">
+                        <button type="button" style="width: auto;padding: 0;line-height: 0;font-size: 11px;height: 20px;" class="btn btn-primary" onclick="toggleChangePassword()">Đổi mật khẩu</button>
+                    </div>
+                </div>
+                <div class="change-password" hidden>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Nhập mật khẩu cũ</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" id="oldPassword" name="nhập mật khẩu cũ" placeholder="nhập mật khẩu cũ" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Nhập mật khẩu mới</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" id="newPassword" name="nhập mật khẩu mới" placeholder="nhập mật khẩu mới" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-md-2 control-label">Nhập lại mật khẩu</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" id="confirmPassword" name="nhập lại mật khẩu mới" placeholder="nhập lại mật khẩu mới" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback lblmessage display-none">
+                        <label class="col-md-2 control-label"></label>
+                        <div class="col-md-6">
+                            <label class="font-red-haze" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message">Dữ liệu không hợp lệ!</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary btn-block btn-flat" onclick="changePassword()"> <i class="fa fa-lock"></i> Lưu</button>
+                        </div>
+                    </div>
+                </div>
+                @*  *@
+                @* Thêm Địa Chỉ Lấy hàng *@
+                <div class="form-group has-feedback">
+                    <label class="col-md-2 control-label">Thêm địa chỉ lấy hàng</label>
+                    <div class="col-md-10 pt-7">
+                        <button type="button" style="width: auto;padding: 0;line-height: 0;font-size: 11px;height: 20px;" class="btn btn-primary" onclick="toggleAddAddressDepartment()">Thêm địa chỉ lấy hàng</button>
+                    </div>
+                </div>
+                <div class="add-address-department" hidden>
+                    <div class="col-md-12 no-padding">
+                        <div class="col-md-6 no-padding">
+                            <div class="form-group has-feedback">
+                                <label class="col-md-4 control-label">Họ tên</label>
+                                <div class="col-md-8 pl-10">
+                                    <input type="text" class="form-control name-department" name="name" placeholder="Tên người đại diện">
+                                    <span class="fa fa-user-secret form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 no-padding">
+                            <div class="form-group has-feedback">
+                                <label class="col-md-4 control-label">Số điện thoại</label>
+                                <div class="col-md-8 pl-10">
+                                    <input type="text" class="form-control phone-department" name="phone" placeholder="SĐT người đại diện" />
+                                    <span class="fa fa-phone form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 no-padding">
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group has-feedback">
+                                <label class="col-md-2 control-label">Địa chỉ chi tiết</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control address-note" name="phone" placeholder="Địa chỉ chi tiết" />
+                                    <span class="fa fa-map-pin form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group has-feedback">
+                                <label class="col-md-2 control-label">Địa chỉ lấy hàng</label>
+                                <div class="col-md-10">
+                                    <input type="text" id="address-department" class="form-control address-department" name="address" placeholder="Địa chỉ lấy hàng" autocomplete="off">
+                                    <input type="hidden" class="form-control lat" name="lat" />
+                                    <input type="hidden" class="form-control lng" name="lng" />
+                                    <input type="hidden" class="form-control province-id" name="province-id" />
+                                    <input type="hidden" class="form-control district-id" name="district-id" />
+                                    <input type="hidden" class="form-control ward-id" name="ward-id" />
+                                    <input type="hidden" class="form-control hub-id" name="hub-id" />
+                                    <span class="fa fa-map-pin form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 no-padding">
+                        <div class="col-md-6 no-padding">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Tỉnh thành</label>
+                                <div class="col-md-8 pl-10">
+                                    <select name="province" class="form-control select-choice chosen-select province" data-placeholder="Chọn tỉnh thành" placeholder="Vui lòng chọn Tỉnh/Thành">
+                                        <option value="">Chọn tỉnh thành</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 no-padding">
+                        <div class="col-md-6 no-padding">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Quận huyện</label>
+                                <div class="col-md-8 pl-10">
+                                    <select name="district" class="form-control select-choice chosen-select district" data-placeholder="Chọn quận huyện" placeholder="Vui lòng chọn Quận/Huyện">
+                                        <option value="">Chọn quận huyện</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 no-padding">
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 no-padding">
+                        <div class="col-md-6 no-padding">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Phường xã</label>
+                                <div class="col-md-8 pl-10">
+                                    <select name="ward" class="form-control select-choice chosen-select ward" data-placeholder="Chọn phường xã" placeholder="Vui lòng chọn Phường/Xã">
+                                        <option value="">Chọn phường xã</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 no-padding">
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group has-feedback lblmessage-department display-none">
+                        <label class="col-md-2 control-label"></label>
+                        <div class="col-md-6">
+                            <label class="font-red-haze" style="color:red"><i class="fa fa-exclamation-triangle"></i> <span class="message">Dữ liệu không hợp lệ!</span></label>
+                        </div>
+                    </div>
+                    <div class="col-md-12 no-padding">
+                        <div class="col-md-2" style="padding-right:0px"></div>
+                        <div class="col-md-2 no-padding">
+                            <button type="button" class="btn btn-primary btn-block" onclick="saveDepartmant()"> <i class="fa fa-lock"></i> Lưu</button>
+                            @*<button type="button" class="btn btn-primary btn-block save-department"> <i class="fa fa-lock"></i> Lưu</button>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 no-padding margin-top-20">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10 no-padding">
+                        <div class="dataTables_wrapper form-inline no-footer pageajax">
+                            <div class="">
+                                <table class="table table-striped table-bordered table-hover" role="grid" id="department">
+                                    <thead>
+                                        <tr>
+                                            <th>Thao tác</th>
+                                            <th>STT</th>
+                                            <th>Tên người đại diện</th>
+                                            <th>Số điện thoại người đại diện</th>
+                                            <th>Địa chỉ lấy hàng</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Xóa</th>
+                                            <th>0</th>
+                                            <th>0</th>
+                                            <th>0</th>
+                                            <th>0</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*  *@
+            <div class="col-md-12 no-padding margin-top-20">
+                <div class="alert alert-error error" style="display:none">
+                </div>
+                <div class="success alert alert-success" style="display:none">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="/ScriptSys/Info.js"></script>

@@ -1,0 +1,10 @@
+Core.Api/
+.vs/
+Core.Business/obj/
+Core.Entity/obj/
+Core.Data/obj/
+Core.Infrastructure/obj/
+Core.Infrastructure/bin/
+Core.Data/bin/
+Core.Business/bin/
+Core.Entity/bin/

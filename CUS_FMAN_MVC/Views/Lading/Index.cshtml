@@ -1,0 +1,966 @@
+﻿@{ ViewBag.Title = "Quản lý đơn hàng"; ViewBag.ListLading = "active"; }
+<style>
+    .progress-description,
+    .info-box-text {
+        font-size: 12px !important;
+    }
+
+    .info-box-number {
+        font-size: 27px !important;
+    }
+
+    .info-box-icon {
+        background: rgb(255, 255, 255);
+    }
+
+    .bg-green,
+    .callout.callout-success,
+    .alert-success,
+    .label-success,
+    .modal-success .modal-body {
+        background-color: #ffffff !important;
+    }
+
+    .bg-red,
+    .bg-yellow,
+    .bg-aqua,
+    .bg-blue,
+    .bg-light-blue,
+    .bg-green,
+    .bg-navy,
+    .bg-teal,
+    .bg-olive,
+    .bg-lime,
+    .bg-orange,
+    .bg-fuchsia,
+    .bg-purple,
+    .bg-maroon,
+    .bg-black,
+    .bg-red-active,
+    .bg-yellow-active,
+    .bg-aqua-active,
+    .bg-blue-active,
+    .bg-light-blue-active,
+    .bg-green-active,
+    .bg-navy-active,
+    .bg-teal-active,
+    .bg-olive-active,
+    .bg-lime-active,
+    .bg-orange-active,
+    .bg-fuchsia-active,
+    .bg-purple-active,
+    .bg-maroon-active,
+    .bg-black-active,
+    .callout.callout-danger,
+    .callout.callout-warning,
+    .callout.callout-info,
+    .callout.callout-success,
+    .alert-success,
+    .alert-danger,
+    .alert-error,
+    .alert-warning,
+    .alert-info,
+    .label-danger,
+    .label-info,
+    .label-warning,
+    .label-primary,
+    .label-success,
+    .modal-primary .modal-body,
+    .modal-primary .modal-header,
+    .modal-primary .modal-footer,
+    .modal-warning .modal-body,
+    .modal-warning .modal-header,
+    .modal-warning .modal-footer,
+    .modal-info .modal-body,
+    .modal-info .modal-header,
+    .modal-info .modal-footer,
+    .modal-success .modal-body,
+    .modal-success .modal-header,
+    .modal-success .modal-footer,
+    .modal-danger .modal-body,
+    .modal-danger .modal-header,
+    .modal-danger .modal-footer {
+        color: #000 !important;
+    }
+
+    .content {
+        background-color: #fff;
+    }
+
+    .info-box-number-m {
+        font-size: 11px !important;
+        color: red;
+    }
+
+    .info-box-number {
+        display: initial;
+    }
+
+    .deliveryNote {
+    }
+    .ladingModel .modal-90 {
+        width: 90% !important;
+    }
+    .model-90{
+        width: 90% !important;
+    }
+</style>
+<div class="content-wrapper scroller" id="style-10">
+    <div class="col-md-12">
+        <section class="content-header">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action(" DashBroad ", "DashBroad ")"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Quản lý đơn hàng</li>
+            </ol>
+        </section>
+    </div>
+    <div class="col-md-12">
+        <div class="st-form report-revenue message-bb">
+            <div class="extend-head st-bg-2">
+                <div class="extend-title"><span class="Titleform">Danh sách vận đơn của bạn</span></div>
+            </div>
+            <div class="extend-body row">
+                <div class="box-body" style="background: #F5F8FB;">
+                    <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Tất cả" typeDB="0" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-select-all-64.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameAllShipment">Tất cả</span>
+                                <span class="info-box-number" id="CountAllShipment">0</span><span class="info-box-number-m" id="CountAllShipmentM">0</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    @* <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer">
+                            <a href="@Url.Action("WaitingPickup","Lading")">
+                                <div class="info-box-icon" style="border: 0px;">
+                                    <img src="~/Content/img/Icon/icons8-document-64.png" />
+                                </div>
+                                <div class="info-box-content">
+                                    <span class="info-box-text" id="nameNewRequest">MỚI TẠO</span>
+                                    <span class="info-box-number" id="CountNewRequest">0</span><span class="info-box-number-m" id="CountNewRequestM">0</span>
+                                    <span class="progress-description">
+                                        đơn hàng
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div> *@
+                    <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Chờ lấy hàng" typeDB="2" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-food-service-52.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameReadyPickup">CHỜ LẤY HÀNG</span>
+                                <span class="info-box-number" id="CountReadyPickup">0</span><span class="info-box-number-m" id="CountReadyPickupM">0</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Đã lấy hàng" typeDB="3" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-scooter-80.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="namePickupComplete">ĐÃ LẤY HÀNG</span>
+                                <span class="info-box-number" id="CountPickupComplete">0</span><span class="info-box-number-m" id="CountPickupCompleteM">0</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    @* <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Đang đi phát" typeDB="4" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-fax-80.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameExploiting">ĐANG PHÁT</span>
+                                <span class="info-box-number" id="CountExploiting">0</span><span class="info-box-number-m" id="CountExploitingM">0</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div> *@
+                    @* <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Phát thành công" typeDB="5" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-fax-80.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameTranspering">PHÁT THÀNH CÔNG</span>adasd
+                                <span class="info-box-number" id="CountTranspering">0</span><span class="info-box-number-m" id="CountTransperingM">(0)</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div> *@
+                    <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Phát thành công" typeDB="6" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-fax-80.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameDelivering">ĐANG PHÁT</span>
+                                <span class="info-box-number" id="CountDelivering">0</span><span class="info-box-number-m" id="CountDeliveringM">(0)</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    @* <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Chờ duyệt chuyển hoàn" typeDB="7" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-scorecard-64.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameDeliveryFail">CHỜ DUYỆT CHUYỂN HOÀN</span>
+                                <span class="info-box-number" id="CountDeliveryFail">0</span><span class="info-box-number-m" id="CountDeliveryFailM">0</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div> *@
+                    <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Phát thành công" typeDB="8" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-box-filled-50.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameDeliveryComplete">PHÁT THÀNH CÔNG</span>
+                                <span class="info-box-number" id="CountDeliveryComplete">0</span><span class="info-box-number-m" id="CountDeliveryCompleteM">0</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Đã chuyển hoàn" typeDB="9" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-trolley-80.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameReturnComplete">ĐÃ CHUYỂN HOÀN</span>
+                                <span class="info-box-number" id="CountReturnComplete">0</span><span class="info-box-number-m" id="CountReturnCompleteM">0</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Chờ chuyển hoàn" typeDB="10" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-trolley-50.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameWaitingReturn">CHỜ CHUYỂN HOÀN</span>
+                                <span class="info-box-number" id="CountWaitingReturn">0</span><span class="info-box-number-m" id="CountWaitingReturnM">0</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                        <div class="info-box bg-green" style="cursor:pointer" typeName="Lưu kho chờ shop check" typeDB="11" onclick="ViewTableData()">
+                            <button class="info-box-icon" style="border: 0px;">
+                                <img src="~/Content/img/Icon/icons8-trolley-64.png" />
+                            </button>
+                            <div class="info-box-content">
+                                <span class="info-box-text" id="nameWarehousingShopCheck">LƯU KHO CHỜ SHOP CHECK</span>
+                                <span class="info-box-number" id="CountWarehousingShopCheck">0</span><span class="info-box-number-m" id="CountWarehousingShopCheckM">0</span>
+                                <span class="progress-description">
+                                    đơn hàng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a class="btn btn-default btn-loadmodal display-none" data-toggle="modal" href="#loadmodal">Show hang</a>
+
+<div class="ladingModel modal fade bs-example-modal-lg ladings ladingedit" id="loadmodal" tabindex="-1" role="basic" aria-hidden="true">
+    <div class="modal-dialog modal-wide model-90 st-form report-revenue message-bb">
+        <div class="modal-content scroller" id="style-3">
+            <div class="modal-header">
+                <button type="button" style="color:#f39c28" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Quản lý đơn hàng - <b id="nameModal">Mới tạo</b></h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div id="sender" class="row">
+                        <div class="extend-container col-md-12">
+                            <div class="extend-head st-bg-2">
+                                <span class="extend-title">Tìm kiếm đơn hàng</span>
+                            </div>
+                            <div class="extend-body col-md-12">
+                                <div class="col-md-2">
+                                    <div class="inputField">
+                                        <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                                            <input type="text" class="inputText width-100 form-starDate-loadmodal" readonly="">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                                            </span>
+                                            <span class="label">Từ ngày</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="inputField">
+                                        <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                                            <input type="text" class="inputText width-100 form-EndDate-loadmodal" readonly="">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                                            </span>
+                                            <span class="label">Đến ngày</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <input type="button" value="Tìm kiếm" class="btn btn-danger btn-search-loadmodal" style="margin-left:15px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="ladinginfo">
+                        <div class="lading-template ">
+                            <div class="extend-container col-md-12">
+                                <div class="extend-head st-bg-2">
+                                    <span class="extend-title">
+                                        Thông tin đơn hàng <span class="ladingnumber"></span>
+                                    </span>
+                                </div>
+                                <div class="extend-body col-md-12">
+                                    <div class="">
+                                        <div class="col-md-12">
+                                            <a class="btn btn-excel custom-lading float-right" title="Xuất excel" style="border-radius:5px; width:auto; height: auto; line-height: 21px; margin-left: 10px">
+                                                <i class="fa fa-download" style="font-size: 15px;"> Xuất excel</i>
+                                            </a>
+                                            <a class="btn btn-print custom-lading float-right" title="In vận đơn" style="border-radius:5px; width:auto; height: auto; line-height: 21px; margin-bottom: 15px;margin-left: 10px">
+                                                <i class="fa fa-print" style="font-size: 15px;"> In vận đơn</i><label class=""></label>
+                                            </a>
+                                            <a class="btn btn-danger btn-AcceptReturn custom-lading float-right" title="Duyệt hoàn" style="border-radius:5px; width:auto; height: auto; line-height: 21px; margin-left: 10px;background-color: #dd4b39;">
+                                                <i class="fa fa-truck" style="font-size: 15px;"> Duyệt hoàn</i>
+                                            </a>
+                                            <a class="btn btn-danger btn-ContinueDelivery custom-lading float-right" title="Tiếp tục giao hàng" style="border-radius:5px; width:auto; height: auto; line-height: 21px; margin-left: 10px;background-color: #dd4b39;">
+                                                <i class="fa fa-truck" style="font-size: 15px;"> Tiếp tục giao hàng</i>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="alert alert-danger error message_error" style="display:none;color:#fff !important">
+                                            </div>
+                                            <div class="message_success success alert alert-success" style="display:none">
+                                            </div>
+                                            <div class="message_success success-accept-return success alert alert-success" style="display:none;background-color:#1768b3 !important;color:#fff !important">
+                                            </div>
+                                            <div class="message_success success-continue-delivery success alert alert-success" style="display:none;background-color:#1768b3 !important;color:#fff !important">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="box  listproterler" style="border: 0px;">
+                                                <div class="extend-body row" style="background: #f2f2f2;">
+                                                    <div class="TableSearch">
+                                                        <table class="table table-striped table-bordered" style="width:100%" id="LoadData">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="stt"><label class="text-center"> <input class="selectAll" type="checkbox" /></label></th>
+                                                                    <th class="stt">#</th>
+                                                                    <th class="stt">STT</th>
+                                                                    <th class="code">Mã VĐ</th>
+                                                                    <th class="code">Mã tham chiếu</th>
+                                                                    <th class="status">Trạng Thái VĐ</th>
+                                                                    <th class="deliveryNote">Lý do giao hàng</th>
+                                                                    <th class="cod">COD</th>
+                                                                    <th class="pricemain">Cước phí</th>
+                                                                    <th class="priceCOD">Cước thu hộ</th>
+                                                                    <th class="sender">Người nhận</th>
+                                                                    <th class="sender">ĐT nhận</th>
+                                                                    <th class="sender">Địa chỉ tiết</th>
+                                                                    <th class="sender">Địa chỉ nhận</th>
+                                                                    <th class="sender">Nội dung hàng hóa</th>
+                                                                    <th class="sender">Ghi chú</th>
+                                                                    <th class="status">Hình thức thanh toán</th>
+                                                                    <th class="createddate">Ngày gửi</th>
+                                                                    <th class="pricemain">TL(<span id="Weight"></span>)</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default bt-close-loadmodal" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display:none">
+                <div class="bb-barcode" style="width:100px; "></div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<a class="btn btn-default btn-AR display-none" data-toggle="modal" href="#modalAcceptReturn">Show hang</a>
+<a class="btn btn-default btn-CD display-none" data-toggle="modal" href="#modalContinueDelivery">Show hang</a>
+
+<div class="ladingModel modal fade bs-example-modal-lg ladings ladingedit" id="modalAcceptReturn" tabindex="-1" role="basic" aria-hidden="true">
+    <div class="modal-dialog modal-wide modal-lg st-form report-revenue message-bb">
+        <div class="modal-content scroller" id="style-3">
+            <div class="modal-header">
+                <button type="button" style="color:#f39c28" class="close close-accept-return" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Duyệt chyển hoàn</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div id="return" class="row">
+                        <div class="extend-container col-md-12">
+                            <div class="extend-head st-bg-2">
+                                <span class="extend-title">Tìm kiếm đơn hàng</span>
+                            </div>
+                            <div class="extend-body col-md-12">
+                                @* <div class="col-md-4 no-padding">
+                                    <div class="form-group">
+                                        <select name="district" class="form-control select-choice chosen-select shipment-status" data-placeholder="Chọn loại chuyển hoàn" placeholder="Vui lòng chọn loại chuyển hoàn">
+                                            <option value="">Chọn loại chuyển hoàn</option>
+                                        </select>
+                                    </div>
+                                </div> *@
+                                <div class="col-md-8"></div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <textarea rows="4" class="form-control accept-return-note" style="height:auto !important" placeholder="Ghi chú"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger error-accept-return message_error" style="display:none;color:#fff !important">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group pull-right">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <input type="button" value="Xác nhận chuyển hoàn" class="btn btn-danger btn-accept-return" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="ladingModel modal fade bs-example-modal-lg ladings ladingedit" id="modalContinueDelivery" tabindex="-1" role="basic" aria-hidden="true">
+    <div class="modal-dialog modal-wide modal-lg st-form report-revenue message-bb">
+        <div class="modal-content scroller" id="style-3">
+            <div class="modal-header">
+                <button type="button" style="color:#f39c28" class="close close-continue-delivery" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Tiếp tục gửi hàng</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div id="return" class="row">
+                        <div class="extend-container col-md-12">
+                            <div class="extend-head st-bg-2">
+                                <span class="extend-title">Tìm kiếm đơn hàng</span>
+                            </div>
+                            <div class="extend-body col-md-12">
+                                @* <div class="col-md-4 no-padding">
+                                    <div class="form-group">
+                                        <select name="district" class="form-control select-choice chosen-select shipment-status" data-placeholder="Chọn loại chuyển hoàn" placeholder="Vui lòng chọn loại chuyển hoàn">
+                                            <option value="">Chọn loại chuyển hoàn</option>
+                                        </select>
+                                    </div>
+                                </div> *@
+                                <div class="col-md-8"></div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <textarea rows="4" class="form-control continue-delivery-note" style="height:auto !important" placeholder="Ghi chú"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger error-continue-delivery message_error" style="display:none;color:#fff !important">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group pull-right">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <input type="button" value="Xác nhận chuyển hoàn" class="btn btn-danger btn-continue-delivery" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<a class="btn btn-default btn-edit display-none" data-toggle="modal" href="#editlading">Show hang</a>
+<!-- END TABLE PORTLET-->
+<div class="ladingModel modal fade bs-example-modal-lg ladings ladingedit" id="editlading" tabindex="-1" role="basic" aria-hidden="true">
+    <form id="ladingFrom">
+        <div class="modal-dialog modal-wide modal-lg-edit">
+            <div class="modal-content scroller" id="style-3">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">SỬA THÔNG TIN ĐƠN HÀNG</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="row" id="ladinginfo">
+                            <div class="lading-template">
+                                <div class="extend-container col-md-12" style="box-shadow: rgba(109, 109, 109, 0.43) 0px 2px 3px;padding: 0px;">
+                                    <div class="extend-head st-bg-2">
+                                        <span class="extend-title">
+                                            Đơn hàng
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6" style="border-right: 1px solid #dad7d7;">
+                                        <div class="extend-head col-md-12 no-padding">
+                                            <div class="extend-title">
+                                                THÔNG TIN NGƯỜI NHẬN HÀNG
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-12 no-padding">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control receiver-phone validate[required]" placeholder="Nhập SĐT người nhận hàng" title="Nhập chính xác số điện thoại người nhận.">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control receiver-name validate[required]" placeholder="Tên khách hàng" title="Tên khách hàng">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control receiver-address validate[required]" placeholder="Địa chỉ nhận địa chỉ phát hàng" title="Địa chỉ nhận địa chỉ phát hàng">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding">
+                                                <div class="form-group">
+                                                    <select name="province" class="form-control select-choice chosen-select toProvince" data-placeholder="Chọn tỉnh thành" placeholder="Vui lòng chọn Tỉnh/Thành">
+                                                        <option value="">Chọn tỉnh thành</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding">
+                                                <div class="form-group">
+                                                    <select name="district" class="form-control select-choice chosen-select toDistrict" data-placeholder="Chọn quận huyện" placeholder="Vui lòng chọn Quận/Huyện">
+                                                        <option value="">Chọn quận huyện</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding">
+                                                <div class="form-group">
+                                                    <select name="ward" class="form-control select-choice chosen-select toWard" data-placeholder="Chọn phường xã" placeholder="Vui lòng chọn Phường/Xã">
+                                                        <option value="">Chọn phường xã</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 no-padding">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control receiver-address-note" placeholder="Địa chỉ chi tiết Khu/Khối, Lô/Block" title="Địa chỉ chi tiết giúp chúng tôi giao hàng chính xác hơn">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="extend-head col-md-12 no-padding">
+                                            <div class="extend-title">
+                                                THÔNG TIN LẤY HÀNG
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 no-padding">
+                                            <!-- <div id="sender" data-district-id="" data-city-id="">
+                                                <div class="col-md-12 no-padding">
+                                                    <div class="col-md-2 padding-left-0">
+                                                        <label>Số điện thoại (*):</label>
+                                                    </div>
+                                                    <div class="col-md-10 padding-right-0">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" placeholder="SĐT người liên hệ nhận hàng" class="form-control sender-phone validate[required]" title="SĐT người liên hệ nhận hàng">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 no-padding">
+                                                    <div class="col-md-2 padding-left-0">
+                                                        <label>Tên người gửi (*):</label>
+                                                    </div>
+                                                    <div class="col-md-10 padding-right-0">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" placeholder="Tên người liên hệ nhận hàng" class="form-control sender-name validate[required]" title="Tên người liên hệ nhận hàng">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 no-padding">
+                                                    <div class="col-md-2 padding-left-0">
+                                                        <label>Địa chỉ người gửi (*):</label>
+                                                    </div>
+                                                    <div class="col-md-10 padding-right-0">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" placeholder="Địa chỉ nhận hàng" class="form-control sender-address validate[required]" id="sender-address" title="Địa chỉ nhận hàng">
+                                                                <input type="hidden" class="form-control fromProvince">
+                                                                <input type="hidden" class="form-control fromDistrict">
+                                                                <input type="hidden" class="form-control fromWard">
+                                                                <input type="hidden" class="form-control fromPoHub">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div id="sender" data-district-id="" data-city-id="">
+                                                <div class="col-md-12 no-padding" hidden>
+                                                    <div class="col-md-3 padding-left-0">
+                                                        <label>Số điện thoại <span style="color: red">(*)</span>:</label>
+                                                    </div>
+                                                    <div class="col-md-9 padding-right-0">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" placeholder="SĐT người liên hệ nhận hàng" class="form-control sender-phone validate[required]">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 no-padding" hidden>
+                                                    <div class="col-md-3 padding-left-0">
+                                                        <label>Tên người gửi <span style="color: red">(*)</span>:</label>
+                                                    </div>
+                                                    <div class="col-md-9 padding-right-0">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" placeholder="Tên người liên hệ nhận hàng" class="form-control sender-name validate[required]">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 no-padding" hidden>
+                                                    <div class="col-md-3 padding-left-0">
+                                                        <label>Tên công ty:</label>
+                                                    </div>
+                                                    <div class="col-md-9 padding-right-0">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" placeholder="Tên người liên hệ nhận hàng" class="form-control sender-company validate[required]">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 no-padding" hidden>
+                                                    <div class="col-md-3 padding-left-0">
+                                                        <label>Địa chỉ người gửi <span style="color: red">(*)</span>:</label>
+                                                    </div>
+                                                    <div class="col-md-9 padding-right-0">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" placeholder="Địa chỉ nhận hàng" class="form-control sender-address validate[required]" id="sender-address">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 no-padding">
+                                                    <div class="col-md-3 padding-left-0">
+                                                        <label>Địa chỉ<span style="color: red">(*)</span>:</label>
+                                                    </div>
+                                                    <div class="col-md-8 padding-right-0">
+                                                        <div class="form-group">
+                                                            <select class="form-control select-choice sender-address-select" data-placeholder="Chọn địa chỉ">
+                                                                <option value="">Chọn địa chỉ</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1 padding-right-0">
+                                                        <div class="form-group">
+                                                            <a href="/thong-tin-ca-nhan.html" title="Thêm địa chỉ lấy hàng">
+                                                                <i style="right: 0;top: 5px;display: flex;position: absolute;font-size: 20px;" class="fa fa-plus-circle" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="extend-head col-md-12 no-padding">
+                                            <div class="extend-title">
+                                                THÔNG TIN HÀNG HÓA
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-12 no-padding">
+                                                <div class="order" id="order-0-0" style="margin: 0px 0 10px 0; overflow: hidden">
+                                                    <div class="col-md-12 no-padding" style="border: 1px solid #aaa;">
+                                                        <div class="col-md-12 row-field no-padding" style="margin-left: 0;border-bottom: 1px solid #ccc;padding: 0;">
+                                                            <div class="order-index col-md-1" style="padding: 5px;">
+                                                                <b class="index-number">1.</b>
+                                                            </div>
+                                                            <div class="product-name col-md-11 no-padding">
+                                                                <div class="form-group" style="margin-bottom:0">
+                                                                    <div class="input-group">
+                                                                        <textarea rows="2" class="form-control description validate[required]" style="border: none;box-shadow: none;height:auto !important" placeholder="Nội dung hàng hóa" title="Nội dung hàng hóa"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="weight-text row-field col-md-12" style="margin-left: 0px; padding: 0px; display: block;border-bottom: 1px solid #ccc;">
+                                                            <div class="col-md-1" style="padding: 5px;">
+                                                                <b>Dài:</b>
+                                                            </div>
+                                                            <div class="col-md-1 no-padding" style="border-right: 1px solid #ccc;">
+                                                                <div class="form-group" style="margin-bottom:0">
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control length-box" style="border: none;box-shadow: none;" placeholder="cm" title="Chiều dài hàng hóa. Ví dụ: 1">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-1" style="padding: 5px;">
+                                                                <b>Rộng:</b>
+                                                            </div>
+                                                            <div class="col-md-1 no-padding" " style="border-right: 1px solid #ccc;">
+                                                                <div class="form-group" style="margin-bottom:0">
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control width-box" style="border: none;box-shadow: none;" placeholder="cm" title="Chiều rộng hàng hóa. Ví dụ: 1">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-1" style="padding: 5px;">
+                                                                <b>Cao:</b>
+                                                            </div>
+                                                            <div class="col-md-1 no-padding" " style="border-right: 1px solid #ccc;">
+                                                                <div class="form-group" style="margin-bottom:0">
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control height-box" style="border: none;box-shadow: none;" placeholder="cm" title="Chiều cao hàng hóa. Ví dụ: 1">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-1" style="padding: 5px;">
+                                                                <b>KL:</b>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form-group" style="border-right: 1px solid #ccc;margin-bottom:0">
+                                                                    <div class="input-group">
+                                                                        <input type="number" class="form-control weight validate[required, min[0.00001]]" style="border: none;box-shadow: none;" placeholder="kg">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-1" style="padding: 5px;">
+                                                                <b>TLQĐ:</b>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form-group" style="margin-bottom:0">
+                                                                    <div class="input-group">
+                                                                        <input type="number" class="form-control cal-weight" style="border: none;box-shadow: none;background-color: rgb(255, 255, 255);" placeholder="kg" readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-12 no-padding">
+                                                <div class="col-md-2 padding-left-0">
+                                                    <label>Dịch vụ (*):</label>
+                                                </div>
+                                                <div class="col-md-4 padding-right-0">
+                                                    <div class="form-group">
+                                                        <select class="form-control select-choice service" data-placeholder="Chọn dịch vụ" title="Chọn dịch vụ">
+                                                            <option value="">Chọn dịch vụ</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 padding-right-0">
+                                                    <label>Bưu gửi:</label>
+                                                </div>
+                                                <div class="col-md-4 padding-right-0">
+                                                    <div class="form-group">
+                                                        <select class="form-control select-choice structure" data-placeholder="Chọn loại hàng hóa">
+                                                            <option value="">Chọn loại hàng hóa</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                @*<div class="col-md-2 ">
+                                                    <label>Loại hàng hóa (*):</label>
+                                                </div>
+                                                <div class="col-md-4 padding-right-0">
+                                                    <div class="form-group">
+                                                        <select class="form-control select-choice structure" data-placeholder="Chọn loại hàng hóa" title="Chọn loại hàng hóa">
+                                                            <option value="">Chọn loại hàng hóa</option>
+                                                        </select>
+                                                    </div>
+                                                </div>*@
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-6 cod-div no-padding">
+                                                <div class="col-md-4 padding-left-0">
+                                                    <label>Tiền thu hộ - COD:</label>
+                                                </div>
+                                                <div class="col-md-8 padding-right-0">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Thu hộ" class="form-control cod validate[min[0.00001]]" title="Tiền thu hộ">
+                                                        <input type="hidden" placeholder="0" class="form-control cod-price" readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 insured-div padding-right-0">
+                                                <div class="col-md-4 padding-left-0">
+                                                    <label>Khai giá:</label>
+                                                </div>
+                                                <div class="col-md-8" style="padding: 0px 0px 0px 4px;">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Giá trị HH" class="form-control insured" title="Giá trị HH">
+                                                        <input type="hidden" placeholder="0" class="form-control insured-price" readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-12 no-padding">
+                                                <div class="col-md-2 padding-left-0">
+                                                    <label>Dịch vụ gia tăng:</label>
+                                                </div>
+                                                <div class="col-md-4 padding-right-0">
+                                                    <div class="form-group">
+                                                        <select class="btn btn-default servicedvgt" data-placeholder="Chọn DVGT" multiple="multiple" data-label="left" itemprop="2" itemscope="2" data-select-all="true" data-width="100%" data-filter="true" data-action-onchange="true"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label> Phí:</label>
+                                                </div>
+                                                <div class="col-md-4 padding-right-0">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="0" class="form-control dvgt-price" readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 no-padding">
+                                            <div class="col-md-12 no-padding">
+                                                <div class="col-md-2 padding-left-0">
+                                                    <label>Tổng cước/phí:</label>
+                                                </div>
+                                                <div class="col-md-4 padding-right-0">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="0" class="form-control amount" title="Tổng tiền tạm tính" readonly>
+                                                        <input type="hidden" placeholder="0" class="form-control price-main" readonly>
+                                                        <input type="hidden" placeholder="0" class="form-control ppxd-price" readonly>
+                                                        <input type="hidden" placeholder="0" class="form-control price-far" readonly>
+                                                        <input type="hidden" placeholder="0" class="form-control other-price" readonly>
+                                                        <input type="hidden" placeholder="0" class="form-control vat" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Trả phí (*):</label>
+                                                </div>
+                                                <div class="col-md-4 padding-right-0">
+                                                    <div class="form-group">
+                                                        <select class="form-control select-choice payment validate[required]" data-placeholder="Chọn Thanh toán" title="Chọn Thanh toán">
+                                                            <option value="">Thanh toán</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 no-padding">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <textarea rows="4" class="form-control noted" style="height:auto !important" placeholder="Ghi chú của khách hàng" title="Ghi chú của khách hàng"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" class="form-control orderdate">
+                                        <input type="hidden" class="form-control shipmentStatus">
+                                        <input type="hidden" class="form-control shipmentNumber">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lading-list">
+                            </div>
+                            <div class="modal-footer col-md-12">
+                                <div class="alert alert-danger error message_error" style="display:none">
+                                </div>
+                                <div class="message_success success alert alert-success" style="display:none">
+                                </div>
+                                <button type="button" class="btn btn-success bt-update">Lưu thông tin</button>
+                                <button type="button" class="btn btn-default bt-close" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </form>
+    <!-- /.modal-dialog -->
+</div>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+<script src="~/Content/plugins/jquery-validation/jquery.validationEngine.js"></script>
+<script src="~/Content/plugins/jquery-validation/jquery.validationEngine.Custom.js"></script>
+<script src="~/Content/plugins/jquery-validation/jquery.validationEngine-vi.js"></script>
+<script src="~/Content/assets/plugins/chosen.jquery.js"></script>
+<script src="~/ScriptSys/EditLadingScript.js"></script>
+<script src="~/ScriptSys/DashBroad/DashBroad.js"></script>

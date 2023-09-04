@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Tra cứu đơn hàng";
+    ViewBag.TrackingActive = "active";
+}
+
+<div class="content-wrapper scroller">
+    <div class="tracking-map">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control txt-searchM" placeholder="Mã đơn hàng cần xác định vị trí trên map">
+            <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btnM" class="btn btn-flat bt-searchM">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div id="map_canvastracking" style="height: 100%">
+
+    </div>
+</div>
+
+<!-- BEGIN SAMPLE FORM PORTLET-->
+<div class="modal fade" id="ladingdeliveryModal" tabindex="-1" role="basic" aria-hidden="true">
+    <div class="modal-dialog modal-wide-map">
+        <div class="modal-content">
+            <div class="modal-body main-lading-tracking">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tab-flat" role="tablist">
+                    <li class="active" role="presentation"><a href="#tab1" aria-controls="1" role="tab" data-toggle="tab">Đang Nhận Hàng <span id="DangLayHang" class="badge bg-red graded">0</span></a></li>
+                    <li role="presentation"><a href="#tab2" aria-controls="2" role="tab" data-toggle="tab">Đã Nhận Hàng <span id="DaLayHang" class="badge bg-green graded">0</span></a></li>
+                    <li role="presentation"><a href="#tab3" aria-controls="3" role="tab" data-toggle="tab">Đang Trung Chuyển <span id="DangTrungChuyen" class="badge bg-yellow graded">0</span></a></li>
+                    <li role="presentation"><a href="#tab4" aria-controls="4" role="tab" data-toggle="tab">Đã Nhận Lại Chi Nhánh Phát <span id="DaNhanLai" class="badge bg-blue graded">0</span></a></li>
+                    <li role="presentation"><a href="#tab5" aria-controls="5" role="tab" data-toggle="tab">Đang Phát <span id="DangPhat" class="badge bg-aqua graded">0</span></a></li>
+                    <li role="presentation"><a href="#tab6" aria-controls="6" role="tab" data-toggle="tab">Đã Phát Thành Công <span id="ThanhCong" class="badge bg-fuchsia graded">0</span></a></li>
+                    <li role="presentation"><a href="#tab7" aria-controls="7" role="tab" data-toggle="tab">Khai Thác Lại Thông Tin Gốc <span id="KhaiThacThongTin" class="badge bg-danger graded">0</span></a></li>
+                    <li role="presentation"><a href="#tab8" aria-controls="8" role="tab" data-toggle="tab">Hoàn Gốc <span id="HoanGoc" class="badge bg-orange graded">0</span></a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content tabs-flat">
+                    <div role="tabpanel" class="data-dlh tab-pane fade active in" id="tab1">
+
+                    </div>
+                    <div role="tabpanel" class="data-dalayh tab-pane" id="tab2">
+
+                    </div>
+                    <div role="tabpanel" class="data-dtc tab-pane" id="tab3">
+
+                    </div>
+                    <div role="tabpanel" class="data-dntcnp tab-pane" id="tab4">
+
+                    </div>
+                    <div role="tabpanel" class="data-dp tab-pane" id="tab5">
+
+                    </div>
+                    <div role="tabpanel" class="data-ptc tab-pane" id="tab6">
+
+                    </div>
+                    <div role="tabpanel" class="data-ktl tab-pane" id="tab7">
+
+                    </div>
+                    <div role="tabpanel" class="data-hg tab-pane" id="tab8">
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- END SAMPLE FORM PORTLET-->
+<style>
+    .dataTables_wrapper .dataTables_paginate {
+        margin-top: -30px;
+    }
+</style>
+<script src="~/ScriptSys/TrackingLadingScript.js"></script>

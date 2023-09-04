@@ -1,0 +1,313 @@
+﻿/*Format Form*/
+.box-header > .fa, .box-header > .glyphicon, .box-header > .ion, .box-header .box-title {
+    font-size: 16px;
+}
+
+[class*="-offset-"] .st-form {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 15px;
+    -webkit-box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.st-form {
+    background: #fff;
+}
+
+    .st-form .st-title {
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: bold;
+        color: #777;
+    }
+
+    .st-form .row {
+        margin-bottom: 20px;
+    }
+
+        .st-form .row.none {
+            margin-bottom: 0;
+        }
+
+    .st-form .box.box-default {
+        border-top: 2px solid #dddddd;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        margin-bottom: -20px;
+    }
+
+    .st-form .inputField {
+        border-bottom: 2px solid #ddd;
+        background: #fff;
+        position: relative;
+        height: 50px;
+        font-size: 12px;
+        overflow: hidden;
+    }
+
+        .st-form .inputField, .st-form .inputField .label {
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            -ms-transition: all 0.2s ease;
+            -o-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+            .st-form .inputField, .st-form .inputField .inputText {
+                -webkit-border-radius: 0px;
+                -moz-border-radius: 0px;
+                border-radius: 0px;
+            }
+
+                .st-form .inputField.textarea {
+                    height: 120px;
+                }
+
+    .st-form .inputText, .st-form select {
+        border: none;
+        height: 100%;
+        padding: 0;
+        color: #333;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+        .st-form .inputText, .st-form .inputText:focus, .st-form select, .st-form select:focus {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            outline: none;
+        }
+
+    .st-form .extend-container {
+        margin-bottom: 20px;
+    }
+
+        /*.st-form .extend-container .extend-body {
+            box-shadow: 0 0 7px rgba(0,0,0,0.4);
+        }*/
+
+        .st-form .extend-container.col-md-12 {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+            .st-form .extend-container.col-md-12.end {
+                margin-bottom: 0;
+            }
+
+    .st-form .extend-head .row {
+        margin-bottom: 0;
+    }
+
+    .st-form .select-in-title .chosen-container-single .chosen-single div b {
+        background: url(/content/chosen/css/chosen-sprite.png) no-repeat 0 0px;
+    }
+
+    .st-form .select-in-title .chosen-container-single .chosen-drop {
+        margin-top: 5px;
+    }
+
+
+    .st-form .select-in-title .chosen-container-active.chosen-with-drop .chosen-single div b {
+        background-position: -18px 0px;
+    }
+
+    .st-form .select-in-title .chosen-container .chosen-single {
+        background-color: inherit;
+        border: none;
+        box-shadow: none;
+        padding: 0px;
+        height: 18px;
+        line-height: 18px;
+        border-radius: 0;
+        color: inherit;
+    }
+
+        .st-form .select-in-title .chosen-container .chosen-single span {
+            padding-left: 10px;
+        }
+
+    .st-form .label {
+        color: #888;
+        font-size: 13px;
+        font-weight: 400;
+        height: 20px;
+        pointer-events: none;
+        position: absolute;
+        top: 20px;
+        bottom: 0;
+        left: 0;
+    }
+
+
+    .st-form .inputField.active .label {
+        display: block !important;
+    }
+
+    .st-form .label.right {
+        right: 0;
+        display: none;
+    }
+
+
+    .st-form .inputText, .st-form .label {
+        padding: 0px;
+    }
+
+    .st-form .inputField.active .inputText:not(select) {
+        padding-top: 23px;
+        padding-bottom: 5px;
+        width: 100%;
+    }
+
+    .st-form .inputField.active .label {
+        top: 7px;
+        color: #4c4c4c;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    .st-form .inputField.active.focus {
+        border-color: #db6b16;
+    }
+
+        .st-form .inputField.active.focus .label {
+            color: #db6b16;
+        }
+
+    .st-form .multiselect-native-select .btn-group {
+        width: 100% !important;
+    }
+
+        .st-form .multiselect-native-select .btn-group .multiselect {
+            font-size: 12px;
+            width: 100% !important;
+        }
+
+    .st-form .multiselect-container {
+        width: 100%;
+    }
+
+    .st-form .multiselect-native-select .multiselect-container > li > a > label {
+        white-space: normal;
+    }
+
+
+    .st-form .multiselect-native-select .multiselect-selected-text {
+        margin-right: 26px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    .st-form .st-select {
+        position: relative;
+        height: 100%;
+    }
+
+        .st-form .st-select .chosen-container-single .chosen-single {
+            background-color: #fff;
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding;
+            background-clip: padding-box;
+            border: none;
+            border-bottom: 2px solid #dddddd;
+            -webkit-box-shadow: inset 0 1px 1px white;
+            box-shadow: inset 0 1px 1px white;
+            border-radius: 0;
+            color: #555555;
+            display: block;
+            height: 50px;
+            overflow: hidden;
+            line-height: 50px;
+            position: relative;
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 5px 10px;
+            text-transform: capitalize;
+        }
+
+            .st-form .st-select .chosen-container-single .chosen-single div b {
+                background: url(/Content/img/expand-button.png) no-repeat;
+                background-position: 0px 23px;
+            }
+
+        .st-form .st-select select, .st-form .st-select select option {
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+
+            .st-form .st-select select option {
+                padding: 7px 14px;
+            }
+
+            .st-form .st-select select:focus {
+                outline: none;
+            }
+
+        .st-form .st-select .label {
+            top: 7px;
+            color: #999;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+    .st-form .date .btn {
+        margin-top: 15px;
+    }
+
+    .st-form .st-capcha {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+
+        .st-form .st-capcha .tb-cell {
+            width: 50%;
+        }
+
+        .st-form .st-capcha .capcha {
+            padding-left: 15px;
+        }
+
+input[type="checkbox"], input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    border: 1px solid gray;
+    background-color: white;
+    display: -moz-inline-box;
+    display: inline-block;
+    zoom: 1;
+    border-radius: 0;
+    background-image: url(/content/img/sprite.png);
+    background-repeat: no-repeat;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 992px) {
+    [class*="-offset-"] .st-form {
+        padding: 15px 25px;
+    }
+
+    .nowrap {
+        white-space: nowrap;
+    }
+}
+/*End Format Form*/
+
+.form-group .control-label {
+    font-weight: 500;
+}

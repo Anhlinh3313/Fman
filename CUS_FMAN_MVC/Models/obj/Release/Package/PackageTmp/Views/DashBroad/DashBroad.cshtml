@@ -1,0 +1,312 @@
+﻿
+@{
+    ViewBag.Title = "DashBroad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .progress-description, .info-box-text {
+        font-size: 12px !important;
+    }
+
+    .info-box-number {
+        font-size: 27px !important;
+    }
+
+    .info-box-icon {
+        background: rgb(255, 255, 255);
+    }
+
+    .bg-green, .callout.callout-success, .alert-success, .label-success, .modal-success .modal-body {
+        background-color: #ffffff !important;
+    }
+
+    .bg-red, .bg-yellow, .bg-aqua, .bg-blue, .bg-light-blue, .bg-green, .bg-navy, .bg-teal, .bg-olive, .bg-lime, .bg-orange, .bg-fuchsia, .bg-purple, .bg-maroon, .bg-black, .bg-red-active, .bg-yellow-active, .bg-aqua-active, .bg-blue-active, .bg-light-blue-active, .bg-green-active, .bg-navy-active, .bg-teal-active, .bg-olive-active, .bg-lime-active, .bg-orange-active, .bg-fuchsia-active, .bg-purple-active, .bg-maroon-active, .bg-black-active, .callout.callout-danger, .callout.callout-warning, .callout.callout-info, .callout.callout-success, .alert-success, .alert-danger, .alert-error, .alert-warning, .alert-info, .label-danger, .label-info, .label-warning, .label-primary, .label-success, .modal-primary .modal-body, .modal-primary .modal-header, .modal-primary .modal-footer, .modal-warning .modal-body, .modal-warning .modal-header, .modal-warning .modal-footer, .modal-info .modal-body, .modal-info .modal-header, .modal-info .modal-footer, .modal-success .modal-body, .modal-success .modal-header, .modal-success .modal-footer, .modal-danger .modal-body, .modal-danger .modal-header, .modal-danger .modal-footer {
+        color: #000 !important;
+    }
+
+    .content {
+        background-color: #fff;
+    }
+    .info-box-number-m {
+        font-size: 11px !important;
+        color: red;
+    }
+    .info-box-number {
+        display: initial;
+    }
+</style>
+<div class="content-wrapper scroller" id="style-10">
+    <section class="content">
+        <div class="box box-primary summary">
+            <div class="box-header with-border">
+                <i class="fa fa-tags"></i>
+                <h3 class="box-title">Quản lý đơn hàng</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="box-body" style="background: #F5F8FB;">
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Mới tạo" typeDB="ListNew" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-document-64.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">MỚI TẠO</span>
+                            <span class="info-box-number" id="CountRequestList">0</span><span class="info-box-number-m" id="CountRequestListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Đã tiếp nhận" typeDB="ReadyToPick" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-delivery-48.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">ĐÃ TIẾP NHẬN</span>
+                            <span class="info-box-number" id="CountPickingList">0</span><span class="info-box-number-m" id="CountPickingListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Chờ lấy hàng" typeDB="Picking" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-food-service-52.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">CHỜ LẤY HÀNG</span>
+                            <span class="info-box-number" id="CountReadyToPickList">0</span><span class="info-box-number-m" id="CountReadyToPickListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Đã lấy hàng" typeDB="PickupComplete" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-scooter-80.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">ĐÃ LẤY HÀNG</span>
+                            <span class="info-box-number" id="CountPickupCompleteList">0</span><span class="info-box-number-m" id="CountPickupCompleteListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Đang đi phát" typeDB="Delivering" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-fax-80.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">ĐANG ĐI PHÁT</span>
+                            <span class="info-box-number" id="CountDeliveringList">0</span><span class="info-box-number-m" id="CountDeliveringListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Chờ chuyển hoàn" typeDB="ReturnList" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-box-filled-50.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">CHỜ CHUYỂN HOÀN</span>
+                            <span class="info-box-number" id="CountChoChuyenHoanList">0</span><span class="info-box-number-m" id="CountChoChuyenHoanListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Đang chuyển hoàn" typeDB="TransferList" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-trolley-50.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">ĐÃ CHUYỂN HOÀN</span>
+                            <span class="info-box-number" id="CountDaChuyenHoanList">0</span><span class="info-box-number-m" id="CountDaChuyenHoanListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Chờ chuyển COD" typeDB="TypeCODReturn" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-supplier-30.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">CHỜ CHUYỂN COD</span>
+                            <span class="info-box-number" id="CountChoChuyenCODList">0</span><span class="info-box-number-m" id="CountChoChuyenCODListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Hoàn tất" typeDB="DeliveryComplete" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-check-file-64.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">HOÀN TẤT</span>
+                            <span class="info-box-number" id="CountHoanTatList">0</span><span class="info-box-number-m" id="CountHoanTatListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Thất lạc" typeDB="LostPackage" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-box-48.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">THÁT LẠC</span>
+                            <span class="info-box-number" id="CountThatLacList">0</span><span class="info-box-number-m" id="CountThatLacListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="padding: 5px;">
+                    <div class="info-box bg-green">
+                        <button class="info-box-icon" style="border: 0px;" typeName="Hủy" typeDB="Cancel" onclick="ViewTableData()">
+                            <img src="~/Content/img/Icon/icons8-scorecard-64.png" />
+                        </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">HỦY</span>
+                            <span class="info-box-number" id="CountHuyList">0</span><span class="info-box-number-m" id="CountHuyListM">0</span>
+                            <span class="progress-description">
+                                đơn hàng
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+<a class="btn btn-default btn-loadmodal display-none" data-toggle="modal" href="#loadmodal">Show hang</a>
+
+<div class="ladingModel modal fade bs-example-modal-lg ladings ladingedit" id="loadmodal" tabindex="-1" role="basic" aria-hidden="true">
+    <form id="ladingFrom ">
+        <div class="modal-dialog modal-wide modal-lg st-form report-revenue message-bb">
+            <div class="modal-content scroller" id="style-3">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">Quản lý đơn hàng - <b id="nameModal">Mới tạo</b></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div id="sender" class="row">
+                            <div class="extend-container col-md-12">
+                                <div class="extend-head st-bg-2">
+                                    <span class="extend-title">Tìm kiếm đơn hàng</span>
+                                </div>
+                                <div class="extend-body col-md-12">
+                                    <div class="col-md-2">
+                                        <div class="inputField">
+                                            <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                                                <input type="text" class="inputText width-100 form-starDate-loadmodal" readonly="">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                                                </span>
+                                                <span class="label">Từ ngày</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="inputField">
+                                            <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+                                                <input type="text" class="inputText width-100 form-EndDate-loadmodal" readonly="">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-custom inputBut" type="button"><i class="fa fa-calendar"></i></button>
+                                                </span>
+                                                <span class="label">Đến ngày</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <div class="input-group">
+                                                <input type="button" value="Tìm kiếm" class="btn btn-danger btn-search-loadmodal" style="margin-left:15px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="ladinginfo">
+                            <div class="lading-template ">
+                                <div class="extend-container col-md-12">
+                                    <div class="extend-head st-bg-2">
+                                        <span class="extend-title">
+                                            Thông tin đơn hàng <span class="ladingnumber"></span>
+                                        </span>
+                                    </div>
+                                    <div class="extend-body col-md-12">
+                                        <div class="">
+                                            <div class="col-md-12">
+                                                <div class="box  listproterler" style="border: 0px;">
+                                                    <div class="extend-body row" style="background: #f2f2f2;">
+                                                        <div class="TableSearch">
+                                                            <table class="table table-striped table-bordered table-hover" id="LoadData">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="stt">#</th>
+                                                                        <th class="stt">STT</th>
+                                                                        <th class="code">Mã yêu cầu</th>
+                                                                        <th class="status">Trạng Thái</th>
+                                                                        <th class="sender">Người liên hệ</th>
+                                                                        <th class="sender">Số điện thoại</th>
+                                                                        <th class="sender">Địa chỉ nhận hàng</th>
+                                                                        <th class="createddate">Ngày tạo</th>
+                                                                        <th class="pricemain">Trọng lượng(kg)</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default bt-close-loadmodal" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </form>
+    <!-- /.modal-dialog -->
+</div>
+<script src="~/ScriptSys/DashBroad/DashBroad.js"></script>

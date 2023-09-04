@@ -1,0 +1,73 @@
+﻿@model NetCoSoft_DAL.Models.LadingModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <td colspan="2" align="center">
+                <img src="~/Content/img/Logo-sm.png" style="width: 120px;" />
+            </td>
+        </tr>
+        <tr><td colspan="2" align="center" style="font-size: 20px;font-weight: bold;">THÔNG TIN VẬN ĐƠN</td></tr>
+        <tr>
+            <td colspan="2" align="right" style="font-weight:bold">
+                Mã vận đơn: @Model.Code
+            </td>
+        </tr>
+        <tr>
+            <td style="border:1px solid gray;width:50%;">
+                <table border="0" cellspacing="2" cellpadding="5" width="100%">
+                    <tr>
+                        <td>Họ tên người gửi: @Model.FullName</td>
+                    </tr>
+                    <tr>
+                        <td>Điện thoại: @Model.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ: @Model.Address</td>
+                    </tr>
+                    <tr>
+                        <td>Công ty: @Model.Company</td>
+                    </tr>
+                </table>
+            </td>
+            <td style="border:1px solid gray;width:50%;">
+                <table border="0" cellspacing="2" cellpadding="5" width="100%">
+                    <tr>
+                        <td>Họ tên người nhận: @Model.RecipientName</td>
+                    </tr>
+                    <tr>
+                        <td>Điện thoại: @Model.RecipientPhone</td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ: @Model.RecipientAddress</td>
+                    </tr>
+                    <tr>
+                        <td>Công ty: @Model.RecipientCompany</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        @*<tr>
+                <td colspan="2" align="center">
+                    CHI TIẾT ĐƠN HÀNG
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    @Model.Code
+                </td>
+            </tr>*@
+    </table>
+</body>
+</html>

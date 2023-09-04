@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ReleaseVersion>0.3</ReleaseVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Http\" />
+    <Folder Include="Enum\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Security\" />
+    <Folder Include="Middleware\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.1.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Entity\Core.Entity.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Middleware\TokenProviderOptions.cs" />
+  </ItemGroup>
+</Project>

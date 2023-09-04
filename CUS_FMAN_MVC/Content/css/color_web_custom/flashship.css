@@ -1,0 +1,131 @@
+﻿.main-header .sidebar-toggle {
+    background-color: #80c241 !important;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #80c241 !important;
+}
+
+.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a {
+    background: #80c241;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #ffc501 !important;
+}
+
+.main-header .logo .logo-mini {
+    padding: 7px 15px;
+}
+
+.form-horizontal .form-body input[type="button"]:hover {
+    background-color: #2a55c1 !important;
+    border-color: #2a55c1 !important;
+}
+
+.form-horizontal .form-body input[type="button"] {
+    background-color: #294da9;
+    border-color: #294da9;
+}
+
+    .form-horizontal .form-body input[type="button"].focus, .form-horizontal .form-body input[type="button"]:focus {
+        background-color: #2a55c1 !important;
+        border-color: #2a55c1 !important;
+    }
+
+.content-wrapper button[type="submit"] {
+    background-color: #dca025 !important;
+    border-color: #dca025 !important;
+}
+
+    .content-wrapper button[type="submit"]:hover, .content-wrapper button[type="submit"]:active, .content-wrapper button[type="submit"]:hover {
+        background-color: #443026 !important;
+        border-color: #443026 !important;
+    }
+
+.skin-blue .user-panel > .info, .skin-blue .user-panel > .info > a {
+    color: #ef920d !important;
+}
+
+.box-event {
+    display: flex;
+    text-align: center;
+    font-size: 11px;
+    height: 30px;
+    width: 100%;
+    background-color: #dca025;
+    position: absolute;
+    right: 0px;
+    border: 0;
+    top: 0;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+}
+
+a.box-event:focus, a.box-event:hover {
+    color: #fff;
+    background-color: #294da9;
+}
+.ladings .btn-info {
+    background-color: #294da9 !important;
+    border-color: #294da9 !important;
+}
+.ladings .btn-info:hover {
+    background-color: #2a55c1 !important;
+    border-color: #2a55c1 !important;
+}
+.btn-info, .btn-vse {
+    background-color: #294da9 !important;
+    border-color: #294da9 !important;
+}
+.btn-info:hover, .btn-vse:hover {
+    background-color: #2a55c1 !important;
+    border-color: #2a55c1 !important;
+}
+.custom-lading {
+    background-color: #294da9 !important;
+}
+
+.main-header .logo .logo-lg {
+    display: block;
+    position: absolute;
+    left: 0px;
+    background: #ffc91d;
+}
+.main-sidebar, .left-side {
+    /* padding-top: 130px; */
+}
+.main-sidebar, .left-side {
+    padding-top: 100px !important;
+}
+.main-header .logo .logo-mini img, .main-header .logo .logo-lg img {
+    max-height: 200px;
+    width: 200px;
+    padding-top: 0px;
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+}
+.skin-blue .main-header .logo {
+    background-color: #fff !important;
+}
+@media (min-width: 768px){
+    .sidebar-mini.sidebar-collapse .main-header .logo {
+        width: 50px;
+        height: 60px;
+        padding: 0;
+    }.sidebar-mini.sidebar-collapse .main-sidebar {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+        width: 50px !important;
+        z-index: 850;
+        padding-top: 59px;
+    }
+}
+.login-page .div-logo {
+    background: #fff !important;
+}
